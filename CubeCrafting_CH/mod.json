@@ -9,7 +9,7 @@
       "id": "removeItems",
       "type": "checkbox",
       "name": "Remove items from sockets",
-      "description": "Recipes to remove items from sockets (2 new recipes). May require the ExpandedCube mod to handle big items with lots of runes.",
+      "description": "Recipes to remove items from sockets (item + Thawing potion) (2 new recipes). May require the ExpandedCube mod to handle big items with lots of runes.",
       "defaultValue": true
     },
     {
@@ -36,7 +36,7 @@
     {
         "id": "socketing",
         "type": "checkbox",
-        "name": "Toggle sockets in normal items",
+        "name": "Toggle sockets in items",
         "description": "Toggle sockets in normal and superior items - rerolls the item - item + Stamina Potion (16 new recipes).",
         "defaultValue": true
     },
