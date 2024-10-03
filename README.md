@@ -18,5 +18,5 @@ This mod adds recipes for upgrading and splitting gems.
 ## [PotionRecipes_CH](https://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/PotionRecipes_CH)
 This mod adds recipes for upgrading and converting potions.
 
-## [RuneSplitting_CH](phttps://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/RuneSplitting_CH)
+## [RuneSplitting_CH](https://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/RuneSplitting_CH)
 This mod adds recipes for upgrading and splitting runes.
