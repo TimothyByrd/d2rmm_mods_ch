@@ -1,0 +1,30 @@
+{
+  "name": "Rune Splitting",
+  "description": "Changes rune upgrade recipes to 2 runes and no gems. A single rune will split into two lower runes.",
+  "author": "CelticHound",
+  "website": "https://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/RuneSplitting_CH",
+  "version": "1.0.0",
+  "config": [
+     {
+      "id": "twoRuneUpgrades",
+      "type": "checkbox",
+      "name": "2-Rune Upgrades",
+      "description": "Modifies the rune upgrade recipes to require two of the lower rune and no gems.",
+      "defaultValue": true
+    },
+    {
+      "id": "runeSplitting",
+      "type": "checkbox",
+      "name": "Rune Splitting",
+      "description": "Adds recipes for a single rune to split into two lower runes (32 new recipes).",
+      "defaultValue": true
+    },
+    {
+        "id": "requireThawingPotionToSplit",
+        "type": "checkbox",
+        "name": "Require a thawing potion tp split",
+        "description": "Make the recipes to split a single rune also require a thawing potion, for compatibility with StackableRunes.",
+        "defaultValue": false
+    }
+  ]
+}

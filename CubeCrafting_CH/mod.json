@@ -1,0 +1,72 @@
+{
+  "name": "Cube Crafting",
+  "description": "Adds recipes for more item crafting using the Horadric cube.",
+  "author": "CelticHound",
+  "website": "https://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/CubeCrafting_CH",
+  "version": "1.0.0",
+  "config": [
+    {
+      "id": "removeItems",
+      "type": "checkbox",
+      "name": "Remove items from sockets",
+      "description": "Recipes to remove items from sockets (2 new recipes). May require the ExpandedCube mod to handle big items with lots of runes.",
+      "defaultValue": true
+    },
+    {
+        "id": "toNormal",
+        "type": "checkbox",
+        "name": "Convert to normal item",
+        "description": "Recipes to convert Magic/Rare/Set/Unique items to Normal items, or Low Quality -> Normal -> Superior (item + Antidote potion + Stamina Potion) (8 new recipes).",
+        "defaultValue": true
+    },
+    {
+      "id": "charms",
+      "type": "checkbox",
+      "name": "Reroll charms",
+      "description": "Recipes to take two magic charms of the same size and return one new charm (3 new recipes).",
+      "defaultValue": true
+    },
+    {
+      "id": "jewelry",
+      "type": "checkbox",
+      "name": "Reroll rings/amulets/jewels",
+      "description": "Recipes: 2 rings -> amulet, 2 amulets -> ring, 2 magic jewels -> rare jewel, 2 rare jewels -> magic jewel (6 new recipes).",
+      "defaultValue": true
+    },
+    {
+        "id": "socketing",
+        "type": "checkbox",
+        "name": "Toggle sockets in normal items",
+        "description": "Toggle sockets in normal and superior items - rerolls the item - item + Stamina Potion (16 new recipes).",
+        "defaultValue": true
+    },
+    {
+        "id": "addSockets",
+        "type": "checkbox",
+        "name": "Add sockets to Rare/Set/Unique items",
+        "description": "Recipes to add sockets to Rare/Set/Unique items - item + Antidote Potion + Portal Scroll (3 new recipes).",
+        "defaultValue": true
+    },
+    {
+        "id": "upgrade",
+        "type": "checkbox",
+        "name": "Upgrade Rare/Set/Unique - Basic->Exceptional->Elite",
+        "description": "Upgrade Rare/Set/Unique items to Exceptional or Elite - item + Antidote Potion + Identify Scroll (12 new recipes).",
+        "defaultValue": true
+    },
+    {
+        "id": "reroll",
+        "type": "checkbox",
+        "name": "Reroll item",
+        "description": "Reroll an item - item + Stamina Potion + Identify Scroll (5 new recipe).",
+        "defaultValue": true
+    },
+    {
+      "id": "fixUniques",
+      "type": "checkbox",
+      "name": "Fix unique items for crafting",
+      "description": "Allow unique items to drop more than once per game and lower some item levels.",
+      "defaultValue": true
+    }
+  ]
+}

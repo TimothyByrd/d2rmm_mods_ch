@@ -1,0 +1,86 @@
+{
+  "name": "Gamble Class Items",
+  "description": "Allow gambling for class-specific items (and charms/jewels).",
+  "author": "CelticHound",
+  "website": "https://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/GambleClassItems_CH",
+  "version": "1.0.0",
+  "config": [
+     {
+      "id": "amazon",
+      "type": "checkbox",
+      "name": "Amazon",
+      "description": "Amazon-specific bows, spears & javelins can be gambled.",
+      "defaultValue": true
+    },
+    {
+        "id": "assassin",
+        "type": "checkbox",
+        "name": "Assassin",
+        "description": "Assassin katars can be gambled (suppoesedly already true).",
+        "defaultValue": true
+    },
+    {
+        "id": "barbarian",
+        "type": "checkbox",
+        "name": "Barbarian",
+        "description": "Barbarian-specific helmets can be gambled.",
+        "defaultValue": true
+    },
+    {
+        "id": "druid",
+        "type": "checkbox",
+        "name": "Druid",
+        "description": "Druid-specific pelts can be gambled.",
+        "defaultValue": true
+    },
+    {
+        "id": "necromancer",
+        "type": "checkbox",
+        "name": "Necromancer",
+        "description": "Necromancer wands and heads can be gambled.",
+        "defaultValue": true
+    },
+    {
+        "id": "paladin",
+        "type": "checkbox",
+        "name": "Paladin",
+        "description": "Paladin scepters and shields can be gambled.",
+        "defaultValue": true
+    },
+    {
+        "id": "sorceress",
+        "type": "checkbox",
+        "name": "Sorceress",
+        "description": "Sorceress staves and orbs can be gambled.",
+        "defaultValue": true
+    },
+    {
+        "id": "charms",
+        "type": "checkbox",
+        "name": "Charms",
+        "description": "Small, medium and large charms can be gambled.",
+        "defaultValue": true
+    },
+    {
+        "id": "jewels",
+        "type": "checkbox",
+        "name": "Jewels",
+        "description": "Jewels can be gambled.",
+        "defaultValue": true
+    },
+    {
+        "id": "normalOnly",
+        "type": "checkbox",
+        "name": "Only add normal items",
+        "description": "Only add normal items - not exceptional and elite - to gamble.txt.",
+        "defaultValue": true
+    },
+    {
+        "id": "gambleOdds",
+        "type": "checkbox",
+        "name": "Increase gambling odds",
+        "description": "Make rare/set/unique items more common when gambling.",
+        "defaultValue": true
+    }
+  ]
+}
