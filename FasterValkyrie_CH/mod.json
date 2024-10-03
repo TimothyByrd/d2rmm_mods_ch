@@ -1,0 +1,23 @@
+{
+  "name": "Faster Valkyrie",
+  "description": "Speed up the Valkyrie.",
+  "author": "CelticHound",
+  "website": "",
+  "version": "1.0.0",
+  "config": [
+     {
+      "id": "amazon",
+      "type": "checkbox",
+      "name": "Speed up the Valkyrie",
+      "description": "Speed up the Valkyrie.",
+      "defaultValue": true
+    },
+    {
+        "id": "assassin",
+        "type": "checkbox",
+        "name": "Speed up the Shadow Master and Shadow Warrior",
+        "description": "Speed up the Shadow Master and Shadow Warrior.",
+        "defaultValue": true
+    }
+  ]
+}
