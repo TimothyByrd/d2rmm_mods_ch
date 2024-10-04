@@ -9,9 +9,11 @@ These recipes use potions (and occasionally scrolls) to mark what actions to tak
 In general, Thawing potions loosen things up to take them apart, while Antidote potions make things better,
 and Stamina potions are for recipes where you are likely to want to keep on going. :)
 
-The recipes in this mod use potions (and occasionally scrolls) to signal what craft to make.
+For items, sockets can be added or removed, socket-fillers can be extracted, basic tiems can be upgraded to exceptional or elite. And more.
 
-There are also recipes for upgrading and converting potions, which could be considered "potion crafting".
+There are recipes to get the effect of rerolling charms, rings, amulets and jewels.
+
+There are also recipes for upgrading and converting potions, which could really be considered "potion crafting".
 
 If __`Remove items from sockets`__ is enabled, then recipes are added for weapons and armor to remove items from sockets,
 recovering both the item and the socket fillers.
@@ -40,8 +42,8 @@ This will reroll the item. The recipe is item + Stamina Potion
 If __`Add sockets to Rare/Set/Unique items`__ is enabled, then recipes are added to add sockets to Rare/Set/Unique items.
 The recipe is item + Antidote Potion + Portal Scroll.
 
-If __`Upgrade Rare/Set/Unique - Basic->Exceptional->Elite`__ is enabled, then recipes are added to
-upgrade Rare/Set/Unique items to Exceptional or Elite.
+If __`Upgrade - Basic->Exceptional->Elite`__ is enabled, then recipes are added to
+upgrade items to Exceptional or Elite.
 The recipe is item + Antidote Potion + Identify Scroll.
 
 If __`Reroll item`__ is enabled, then recipes are added to reroll an item.

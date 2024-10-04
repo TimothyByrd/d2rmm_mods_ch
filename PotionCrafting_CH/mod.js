@@ -101,7 +101,7 @@ if (config.upgrade) {
         eli: 7,
     };
 
-    ['uni', 'set', 'rar'].forEach((itemQuality) => {
+    ['uni', 'set', 'rar', 'mag', 'nor'].forEach((itemQuality) => {
         ['bas', 'exc'].forEach((itemLevel) => {
             ['weap', 'armo'].forEach((itemType) => {
                 const outLevel = UPGRADE[itemLevel];

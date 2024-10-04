@@ -50,8 +50,8 @@
     {
         "id": "upgrade",
         "type": "checkbox",
-        "name": "Upgrade Rare/Set/Unique - Basic->Exceptional->Elite",
-        "description": "Upgrade Rare/Set/Unique items to Exceptional or Elite - item + Antidote Potion + Identify Scroll (12 new recipes).",
+        "name": "Upgrade - Basic->Exceptional->Elite",
+        "description": "Upgrade Rare/Set/Unique items to Exceptional or Elite - item + Antidote Potion + Identify Scroll (20 new recipes).",
         "defaultValue": true
     },
     {
