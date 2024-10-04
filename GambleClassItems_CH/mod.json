@@ -3,7 +3,7 @@
   "description": "Allow gambling for class-specific items.",
   "author": "CelticHound",
   "website": "https://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/GambleClassItems_CH",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "config": [
      {
       "id": "amazon",

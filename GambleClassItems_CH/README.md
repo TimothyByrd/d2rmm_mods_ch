@@ -30,3 +30,4 @@ as well as the chances of an exceptional or elite upgrade.
 
 1.0 Initial version
 1.1 Remove options for charms and jewels since they crash D2R (though they worked in D2:Lod).
+1.1.1 Update version so D2RMM can detect it.
