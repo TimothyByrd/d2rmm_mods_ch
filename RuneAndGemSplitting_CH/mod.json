@@ -1,8 +1,8 @@
 {
-  "name": "Rune Splitting",
-  "description": "Changes rune upgrade recipes to 2 runes and no gems. A single rune will split into two lower runes.",
+  "name": "Rune and Gem Splitting",
+  "description": "Simplifies rune and gem upgrade recipes. Add recipes to split runes and gems.",
   "author": "CelticHound",
-  "website": "https://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/RuneSplitting_CH",
+  "website": "https://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/RuneAndGemSplitting_CH",
   "version": "1.0.0",
   "config": [
      {
@@ -20,10 +20,31 @@
       "defaultValue": true
     },
     {
+      "id": "twoGemUpgrades",
+      "type": "checkbox",
+      "name": "2-Gem Upgrades",
+      "description": "Modifies the gem upgrade recipes to require two of the lower gem.",
+      "defaultValue": true
+    },
+    {
+      "id": "gemSplitting",
+      "type": "checkbox",
+      "name": "Gem Splitting",
+      "description": "Adds recipes for a single gem to split into two lower gems (28 new recipes).",
+      "defaultValue": true
+    },
+    {
+      "id": "gemConversion",
+      "type": "checkbox",
+      "name": "Gem Conversion",
+      "description": "Adds recipes for a single gem plus a stamina potion to convert to a different gem of the same rank (35 new recipes).",
+      "defaultValue": true
+    },
+    {
         "id": "requireThawingPotionToSplit",
         "type": "checkbox",
-        "name": "Require a thawing potion tp split",
-        "description": "Make the recipes to split a single rune also require a thawing potion, for compatibility with StackableRunes.",
+        "name": "Require a thawing potion to split",
+        "description": "The recipes to split a single rune or gem also require a thawing potion, for compatibility with StackableRunes and StackableGems.",
         "defaultValue": false
     }
   ]
