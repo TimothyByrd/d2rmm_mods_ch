@@ -55,20 +55,6 @@
         "defaultValue": true
     },
     {
-        "id": "charms",
-        "type": "checkbox",
-        "name": "Charms",
-        "description": "Small, medium and large charms can be gambled.",
-        "defaultValue": true
-    },
-    {
-        "id": "jewels",
-        "type": "checkbox",
-        "name": "Jewels",
-        "description": "Jewels can be gambled.",
-        "defaultValue": true
-    },
-    {
         "id": "normalOnly",
         "type": "checkbox",
         "name": "Only add normal items",

@@ -45,18 +45,6 @@ if (armorTypes.length > 0) {
     });
 }
 
-if (config.charms)
-{
-    itemsToGamble.cm1 = "Charm Small";
-    itemsToGamble.cm2 = "Charm Medium";
-    itemsToGamble.cm3 = "Charm Large";
-}
-
-if (config.jewels)
-{
-    itemsToGamble.jew = "Jewel";
-}
-
 const itemsToGambleKeys = Object.keys(itemsToGamble);
 
 if (itemsToGambleKeys.length > 0) {

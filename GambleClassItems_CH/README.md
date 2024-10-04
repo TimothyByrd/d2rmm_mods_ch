@@ -19,13 +19,14 @@ If __`Paladin`__ is enabled, then Paladin scepters and shields can be gambled.
 
 If __`Sorceress`__ is enabled, then Sorceress staves and orbs can be gambled.
 
-If __`Charms`__ is enabled, then small, medium and large charms can be gambled.
-
-If __`Jewels`__ is enabled, then jewels can be gambled.
-
 If __`Only add normal items`__ is enabled, then only normal items - not exceptional and elite item type - will be added to gamble.txt.
 This is the way other items are put into gamble.txt, but may need to be disabled if there is a problem
 with the normal -> exceptional -> elite progression for some class-specific item type.
 
 If __`Increase gambling odds`__ is enabled, then the chances of a gamble being rare/set/unique are increased,
 as well as the chances of an exceptional or elite upgrade.
+
+## Versions
+
+1.0 Initial version
+1.1 Remove options for charms and jewels since they crash D2R (though they worked in D2:Lod).
