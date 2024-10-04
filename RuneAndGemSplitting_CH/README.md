@@ -2,7 +2,9 @@
 
 ## Rune and Gem Splitting for D2RMM
 
-This mod adds recipes for upgrading and splitting runes.
+This mod adds recipes for upgrading and splitting runes and gems.
+
+Upgrade 2 lower to 1 higher. Split 1 higher to 2 lower.
 
 If __`2-Rune Upgrades`__ is enabled, the existing rune upgrade recipes are updated to require two of the lower rune and no gem.
 
