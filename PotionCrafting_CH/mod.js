@@ -57,7 +57,7 @@ if (config.removeItems) {
 }
 
 if (config.toNormal) {
-    ['mag', 'rar', 'set', 'uni'].forEach((itemQuality) => {
+    ['uni', 'set', 'rar', 'mag', 'hiq'].forEach((itemQuality) => {
         const recipe = {
             description: `${LABELS[itemQuality]} item + Antidote Potion + Stamina Potion -> Normal item`,
             enabled: 1,
@@ -101,7 +101,7 @@ if (config.upgrade) {
         eli: 7,
     };
 
-    ['uni', 'set', 'rar', 'mag', 'nor'].forEach((itemQuality) => {
+    ['uni', 'set', 'rar', 'mag', 'hiq', 'nor'].forEach((itemQuality) => {
         ['bas', 'exc'].forEach((itemLevel) => {
             ['weap', 'armo'].forEach((itemType) => {
                 const outLevel = UPGRADE[itemLevel];
@@ -186,11 +186,26 @@ if (config.addSockets) {
     AddSocketsRecipe('uni', 1);
     AddSocketsRecipe('set', 2);
     AddSocketsRecipe('rar', 2);
+    AddSocketsRecipe('mag', 2);
 }
 
 if (config.socketing) {
-    ['nor', 'hiq'].forEach((qualityLevel) => {
+    ['hiq', 'nor'].forEach((qualityLevel) => {
         ['tors', 'helm', 'shld', 'weap'].forEach((itemType) => {
+            const recipeRemoveSockets = {
+                description: `Socketed ${LABELS[qualityLevel]} ${LABELS[itemType]} + Stamina Potion -> remove sockets`,
+                enabled: 1,
+                version: 100,
+                numinputs: 2,
+                'input 1': `"${itemType},${qualityLevel},sock"`,
+                'input 2': 'vps',
+                output: `"usetype,${qualityLevel},rem"`,
+                'output b': 'vps',
+                ilvl: 100,
+                '*eol\r': 0,
+            };
+            cubemain.rows.push(recipeRemoveSockets);
+
             const recipeAddSockets = {
                 description: `${LABELS[qualityLevel]} ${LABELS[itemType]} + Stamina Potion -> Socketed ${LABELS[itemType]}`,
                 enabled: 1,
@@ -207,20 +222,6 @@ if (config.socketing) {
                 '*eol\r': 0,
             };
             cubemain.rows.push(recipeAddSockets);
-
-            const recipeRemoveSockets = {
-                description: `Socketed ${LABELS[qualityLevel]} ${LABELS[itemType]} + Stamina Potion -> remove sockets`,
-                enabled: 1,
-                version: 100,
-                numinputs: 2,
-                'input 1': `"${itemType},${qualityLevel},sock"`,
-                'input 2': 'vps',
-                output: `"useitem,${qualityLevel},rem"`,
-                'output b': 'vps',
-                ilvl: 100,
-                '*eol\r': 0,
-            };
-            cubemain.rows.push(recipeRemoveSockets);
         });
     });
 }

@@ -3,90 +3,90 @@
     "description": "Craft items using potions",
     "author": "CelticHound",
     "website": "https://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/PotionCrafting_CH",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "config": [
     {
         "id": "removeItems",
         "type": "checkbox",
         "name": "Remove items from sockets",
-        "description": "Recipes to remove items from sockets (item + Thawing potion) (2 new recipes). May require the ExpandedCube mod to handle big items with lots of runes.",
+        "description": "Recipes to remove items from sockets (item + Thawing potion). May require the ExpandedCube mod to handle big items with lots of runes.",
         "defaultValue": true
     },
     {
         "id": "toNormal",
         "type": "checkbox",
         "name": "Convert to normal item",
-        "description": "Recipes to convert Magic/Rare/Set/Unique items to Normal items, or Low Quality -> Normal -> Superior (item + Antidote potion + Stamina Potion) (8 new recipes).",
+        "description": "Recipes to convert Unique/Set/Rare/Magic/Superior items to Normal items, or Low Quality -> Normal -> Superior (item + Antidote potion + Stamina Potion).",
         "defaultValue": true
     },
     {
         "id": "charms",
         "type": "checkbox",
         "name": "Reroll charms",
-        "description": "Recipes to take two magic charms of the same size and return one new charm (3 new recipes).",
+        "description": "Two magic charms of same size -> one new charm.",
         "defaultValue": true
     },
     {
         "id": "jewelry",
         "type": "checkbox",
         "name": "Reroll rings/amulets/jewels",
-        "description": "Recipes: 2 rings -> amulet, 2 amulets -> ring, 2 magic jewels -> rare jewel, 2 rare jewels -> magic jewel (6 new recipes).",
+        "description": "Recipes: 2 rings -> amulet, 2 amulets -> ring, 2 magic jewels -> rare jewel, 2 rare jewels -> magic jewel.",
         "defaultValue": true
     },
     {
         "id": "socketing",
         "type": "checkbox",
         "name": "Toggle sockets in items",
-        "description": "Toggle sockets in normal and superior items - rerolls the item - item + Stamina Potion (16 new recipes).",
+        "description": "Toggle sockets in normal and superior items - rerolls the item - item + Stamina Potion.",
         "defaultValue": true
     },
     {
         "id": "addSockets",
         "type": "checkbox",
-        "name": "Add sockets to Rare/Set/Unique items",
-        "description": "Recipes to add sockets to Rare/Set/Unique items - item + Antidote Potion + Portal Scroll (3 new recipes).",
+        "name": "Add sockets to items",
+        "description": "Add sockets to Unique/Set/Rare/Magic items - item + Antidote Potion + Portal Scroll.",
         "defaultValue": true
     },
     {
         "id": "upgrade",
         "type": "checkbox",
         "name": "Upgrade - Basic->Exceptional->Elite",
-        "description": "Upgrade Rare/Set/Unique items to Exceptional or Elite - item + Antidote Potion + Identify Scroll (20 new recipes).",
+        "description": "Upgrade Rare/Set/Unique items to Exceptional or Elite - item + Antidote Potion + Identify Scroll.",
         "defaultValue": true
     },
     {
         "id": "reroll",
         "type": "checkbox",
         "name": "Reroll item",
-        "description": "Reroll an item - item + Stamina Potion + Identify Scroll (5 new recipe).",
+        "description": "Reroll an item - item + Stamina Potion + Identify Scroll.",
         "defaultValue": true
     },
     {
         "id": "potionUpgrades",
         "type": "checkbox",
         "name": "Upgrade Health and Mana potions",
-        "description": "Add recipes to upgrade two Health or Mana potions to one of the next tier (8 new recipes).",
+        "description": "Upgrade two Health or Mana potions to one of the next tier.",
         "defaultValue": true
     },
     {
         "id": "healthManaConversion",
         "type": "checkbox",
         "name": "Convert between Health and Mana potions",
-        "description": "Adds recipes to convert single Health <-> Mana potions of the same tier (10 new recipes).",
+        "description": "Convert between single Health <-> Mana potions of the same tier.",
         "defaultValue": true
     },
     {
         "id": "easyRejuvinationRecipe",
         "type": "checkbox",
         "name": "Recipes for Full Rejuvination potion",
-        "description": "Add recipe to convert 1 Health and 1 Mana potion (any size) or 2 small Rejuvs to a Full Rejuv potion (2 new recipes).",
+        "description": "Convert 1 Health and 1 Mana potion (any size) or 2 small Rejuvs to a Full Rejuv potion.",
         "defaultValue": true
     },
     {
         "id": "cycleThroughOtherItems",
         "type": "checkbox",
         "name": "Cycle between other potions/scrolls",
-        "description": "Adds recipes to cycle between antidote -> stamina -> thawing -> identify -> portal (5 new recipes).",
+        "description": "Cycle between antidote -> stamina -> thawing -> identify -> portal.",
         "defaultValue": true
     },
     {

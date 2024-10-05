@@ -21,7 +21,7 @@ The recipe is item + Thawing potion.
 
 Since a 2x4 item may have up to 6 sockets, unsocketing such an item will require the ExpandedCube mod to have enough space.
 
-If __`Convert to normal item`__ is enabled, then recipes are added to convert Magic/Rare/Set/Unique items to Normal items,
+If __`Convert to normal item`__ is enabled, then recipes are added to convert Unique/Set/Rare/Magic/Superior items to Normal items,
 or Low Quality -> Normal -> Superior.
 The recipe is item + Antidote potion + Stamina Potion.
 
@@ -39,7 +39,7 @@ If __`Reroll rings/amulets/jewels`__ is enabled, then the following recipes are 
 If __`Toggle sockets in items`__ is enabled, then recipes are added to toggle sockets in normal and superior items.
 This will reroll the item. The recipe is item + Stamina Potion
 
-If __`Add sockets to Rare/Set/Unique items`__ is enabled, then recipes are added to add sockets to Rare/Set/Unique items.
+If __`Add sockets to items`__ is enabled, then recipes are added to add sockets to Unique/Set/Rare/Magic items.
 The recipe is item + Antidote Potion + Portal Scroll.
 
 If __`Upgrade - Basic->Exceptional->Elite`__ is enabled, then recipes are added to
@@ -91,3 +91,8 @@ This is useful for being able to reroll the same unique item over and over again
 Also uniques with a required area level of over 99 (Torch, Annihilus) have that lowered to equal their required level instead.
 This allows them to be rerolled (otherwise, they consider the character to not be high level enough for the recipe).
 This code is from olegbl's [Horadric Forging mod](https://www.nexusmods.com/diablo2resurrected/mods/229).
+
+## Versions
+
+1.0 Initial version
+1.1 Fix bug removing sockets from items

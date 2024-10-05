@@ -16,7 +16,7 @@
       "id": "runeSplitting",
       "type": "checkbox",
       "name": "Rune Splitting",
-      "description": "Adds recipes for a single rune to split into two lower runes (32 new recipes).",
+      "description": "Adds recipes for a single rune to split into two lower runes.",
       "defaultValue": true
     },
     {
@@ -30,14 +30,14 @@
       "id": "gemSplitting",
       "type": "checkbox",
       "name": "Gem Splitting",
-      "description": "Adds recipes for a single gem to split into two lower gems (28 new recipes).",
+      "description": "Adds recipes for a single gem to split into two lower gems.",
       "defaultValue": true
     },
     {
       "id": "gemConversion",
       "type": "checkbox",
       "name": "Gem Conversion",
-      "description": "Adds recipes for a single gem plus a stamina potion to convert to a different gem of the same rank (35 new recipes).",
+      "description": "Adds recipes for a single gem plus a stamina potion to convert to a different gem of the same rank.",
       "defaultValue": true
     },
     {
