@@ -47,10 +47,9 @@ upgrade items to Exceptional or Elite.
 The recipe is item + Antidote Potion + Identify Scroll.
 
 If __`Reroll item`__ is enabled, then recipes are added to reroll an item.
-- The base reroll recipe is item + Stamina Potion + Identify Scroll.
 
-Also a Normal or Superior can be rerolled as Magic, and a Magic Item can be rerolled as Rare.
-The recipe is item + Antidote Potion + Stamina Potion + Identify Scroll.
+- The base reroll recipe is item + Stamina Potion + Identify Scroll.
+- The recipe item + Antidote Potion + Stamina Potion + Identify Scroll converts Normal/Superior -> Magic -> Rare.
 
 If __`Upgrade Health and Mana potions`__ is enabled, these 8 recipees are added:
 
@@ -99,3 +98,4 @@ This code is from olegbl's [Horadric Forging mod](https://www.nexusmods.com/diab
 
 1.0 Initial version
 1.1 Fix bug removing sockets from items
+1.2 Add reroll as Magic/Rare recipes
