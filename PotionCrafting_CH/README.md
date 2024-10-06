@@ -20,7 +20,7 @@ recovering both the item and the socket fillers.
 
 - The recipe is item + Thawing potion.
 
-Since a 2x4 item may have up to 6 sockets, unsocketing such an item will require the ExpandedCube mod to have enough space.
+Since a 2x4 item may have up to 6 sockets, unsocketing such an item will require an Expanded Cube mod to have enough space.
 
 If __`Convert to normal item`__ is enabled, then recipes are added to convert Unique/Set/Rare/Magic/Superior items to Normal items,
 or Low Quality -> Normal -> Superior.
@@ -28,6 +28,8 @@ or Low Quality -> Normal -> Superior.
 - The recipe is item + Antidote potion + Stamina Potion.
 
 If __`Reroll charms`__ is enabled, then recipes are to take two magic charms of the same size and return one new charm.
+
+- 2 Charms -> Charm
 
 If __`Reroll rings/amulets/jewels`__ is enabled, then the following recipes are added:
 
