@@ -17,13 +17,15 @@ There are also recipes for upgrading and converting potions, which could really 
 
 If __`Remove items from sockets`__ is enabled, then recipes are added for weapons and armor to remove items from sockets,
 recovering both the item and the socket fillers.
-The recipe is item + Thawing potion.
+
+- The recipe is item + Thawing potion.
 
 Since a 2x4 item may have up to 6 sockets, unsocketing such an item will require the ExpandedCube mod to have enough space.
 
 If __`Convert to normal item`__ is enabled, then recipes are added to convert Unique/Set/Rare/Magic/Superior items to Normal items,
 or Low Quality -> Normal -> Superior.
-The recipe is item + Antidote potion + Stamina Potion.
+
+- The recipe is item + Antidote potion + Stamina Potion.
 
 If __`Reroll charms`__ is enabled, then recipes are to take two magic charms of the same size and return one new charm.
 
@@ -37,14 +39,18 @@ If __`Reroll rings/amulets/jewels`__ is enabled, then the following recipes are 
 - 2 Rare jewels -> Magic jewel
 
 If __`Toggle sockets in items`__ is enabled, then recipes are added to toggle sockets in normal and superior items.
-This will reroll the item. The recipe is item + Stamina Potion
+This will reroll the item.
+
+- The recipe is item + Stamina Potion
 
 If __`Add sockets to items`__ is enabled, then recipes are added to add sockets to Unique/Set/Rare/Magic items.
-The recipe is item + Antidote Potion + Portal Scroll.
+
+- The recipe is item + Antidote Potion + Portal Scroll.
 
 If __`Upgrade - Basic->Exceptional->Elite`__ is enabled, then recipes are added to
 upgrade items to Exceptional or Elite.
-The recipe is item + Antidote Potion + Identify Scroll.
+
+- The recipe is item + Antidote Potion + Identify Scroll.
 
 If __`Reroll item`__ is enabled, then recipes are added to reroll an item.
 
