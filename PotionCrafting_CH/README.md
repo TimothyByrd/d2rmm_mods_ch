@@ -47,7 +47,10 @@ upgrade items to Exceptional or Elite.
 The recipe is item + Antidote Potion + Identify Scroll.
 
 If __`Reroll item`__ is enabled, then recipes are added to reroll an item.
-The recipe is item + Stamina Potion + Identify Scroll.
+- The base reroll recipe is item + Stamina Potion + Identify Scroll.
+
+Also a Normal or Superior can be rerolled as Magic, and a Magic Item can be rerolled as Rare.
+The recipe is item + Antidote Potion + Stamina Potion + Identify Scroll.
 
 If __`Upgrade Health and Mana potions`__ is enabled, these 8 recipees are added:
 

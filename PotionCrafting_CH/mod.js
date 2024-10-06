@@ -147,7 +147,7 @@ if (config.upgrade) {
 }
 
 if (config.reroll) {
-    ['weap', 'armo', 'rin', 'amu', 'jew'].forEach((itemType) => {
+    ['weap', 'armo', 'rin', 'amu', 'jew', 'cm1', 'cm2', 'cm3'].forEach((itemType) => {
         const recipe = {
             description: `${LABELS[itemType]} + Stamina Potion + Identify Scroll -> reroll item`,
             enabled: 1,
@@ -158,6 +158,47 @@ if (config.reroll) {
             'input 3': 'isc',
             ilvl: 100,
             output: '"useitem,reg"',
+            'output b': 'vps',
+            'output c': 'isc',
+            '*eol\r': 0,
+        };
+        cubemain.rows.push(recipe);
+    });
+
+    ['hiq', 'nor'].forEach((qualityLevel) => {
+    ['weap', 'armo'].forEach((itemType) => {
+        const recipe = {
+            description: `${LABELS[qualityLevel]} ${LABELS[itemType]} + Antidote Potion + Stamina Potion + Identify Scroll -> reroll item as magic`,
+            enabled: 1,
+            version: 100,
+            numinputs: 4,
+            'input 1': `"${itemType},${qualityLevel}"`,
+            'input 2': 'yps',
+            'input 3': 'vps',
+            'input 4': 'isc',
+            ilvl: 100,
+            output: '"usetype,mag"',
+            'output b': 'yps',
+            'output c': 'vps',
+            'output d': 'isc',
+            '*eol\r': 0,
+        };
+        cubemain.rows.push(recipe);
+    });
+    });
+
+    ['weap', 'armo', 'rin', 'amu', 'jew'].forEach((itemType) => {
+        const recipe = {
+            description: `Magic ${LABELS[itemType]} + Antidote Potion + Stamina Potion + Identify Scroll -> reroll item as rare`,
+            enabled: 1,
+            version: 100,
+            numinputs: 4,
+            'input 1': `"${itemType},mag"`,
+            'input 2': 'yps',
+            'input 3': 'vps',
+            'input 4': 'isc',
+            ilvl: 100,
+            output: '"usetype,rar"',
             'output b': 'vps',
             'output c': 'isc',
             '*eol\r': 0,
