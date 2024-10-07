@@ -15,6 +15,8 @@ There are recipes to get the effect of rerolling charms, rings, amulets and jewe
 
 There are also recipes for upgrading and converting potions, which could really be considered "potion crafting".
 
+Note that the "Breakpoint and Recipe UI Panels" mod must install before this mod for recipes to be added to UI Panel.
+
 ## Rerolling items
 
 If __`Convert to normal item`__ is enabled, then recipes are added to convert Unique/Set/Rare/Magic/Superior items to Normal items,
@@ -119,6 +121,7 @@ If __`Cycle between other potions/scrolls`__ is enabled, these recipes are added
 
 The __`Update recipes panel`__ setting is for when the "Breakpoint and Recipe UI Panels" mod is installed.
 It updates the recipe panel to include the new recipes added by this mod.
+The "Breakpoint and Recipe UI Panels" mod must install before this mod for recipes to be added to UI Panel.
 
 If __`Fix unique items for crafting`__ is enabled, then unique items are allowed to drop more than once per game.
 This is useful for being able to reroll the same unique item over and over again. 
