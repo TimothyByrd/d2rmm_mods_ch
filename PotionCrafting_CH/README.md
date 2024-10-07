@@ -9,7 +9,7 @@ These recipes use potions (and occasionally scrolls) to mark what actions to tak
 In general, Thawing potions loosen things up to take them apart, while Antidote potions make things better,
 and Stamina potions are for recipes where you are likely to want to keep on going. :)
 
-For items, sockets can be added or removed, socket-fillers can be extracted, basic tiems can be upgraded to exceptional or elite. And more.
+For items, sockets can be added or removed, socket-fillers can be extracted, basic items can be upgraded to exceptional or elite. And more.
 
 There are recipes to get the effect of rerolling charms, rings, amulets and jewels.
 
