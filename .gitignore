@@ -1,6 +1,10 @@
 *.asv#
 *.zip
 
+# Other mods I am checking out but don't want to accidentally add to my git repo
+
+Breakpoint and Recipe UI Panels/*
+CountessRuneDropFix/*
 ExpandedCube/*
 ExpandedInventory/*
 ExpandedStash/*
@@ -8,3 +12,4 @@ PUT YOUR MODS HERE
 SettingsFontFix/*
 ShowItemLevel/*
 SingleplayerRunewords/*
+Towns QoL Changes/*

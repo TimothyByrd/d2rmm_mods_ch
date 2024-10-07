@@ -5,7 +5,7 @@ const weaponTypes = [];
 if (config.amazon)
     weaponTypes.push('abow', 'aspe', 'ajav');
 if (config.assassin)
-    weaponTypes.push('h2h2');
+    weaponTypes.push('h2h');
 if (config.necromancer)
     weaponTypes.push('wand');
 if (config.paladin)
