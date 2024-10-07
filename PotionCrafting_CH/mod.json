@@ -3,20 +3,34 @@
     "description": "Craft items using potions",
     "author": "CelticHound",
     "website": "https://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/PotionCrafting_CH",
-    "version": "1.2.0",
+    "version": "1.3.0",
     "config": [
-    {
-        "id": "removeItems",
-        "type": "checkbox",
-        "name": "Remove items from sockets",
-        "description": "Recipes to remove items from sockets (item + Thawing potion). May require the ExpandedCube mod to handle big items with lots of runes.",
-        "defaultValue": true
-    },
     {
         "id": "toNormal",
         "type": "checkbox",
         "name": "Convert to normal item",
         "description": "Recipes to convert Unique/Set/Rare/Magic/Superior items to Normal items, or Low Quality -> Normal -> Superior (item + Antidote potion + Stamina Potion).",
+        "defaultValue": true
+    },
+    {
+        "id": "upgrade",
+        "type": "checkbox",
+        "name": "Upgrade item",
+        "description": "Upgrade to Exceptional or Elite - item + Antidote Potion + Identify Scroll (or Ethereal - item + Antidote + Stamina + Thawing).",
+        "defaultValue": true
+    },
+    {
+        "id": "reroll",
+        "type": "checkbox",
+        "name": "Reroll item",
+        "description": "Reroll an item - item + Stamina Potion + Identify Scroll.",
+        "defaultValue": true
+    },
+    {
+        "id": "jewelry",
+        "type": "checkbox",
+        "name": "Reroll jewelry",
+        "description": "Recipes: 2 rings -> amulet, 2 amulets -> ring, 2 magic jewels -> rare jewel, 2 rare jewels -> magic jewel.",
         "defaultValue": true
     },
     {
@@ -27,38 +41,24 @@
         "defaultValue": true
     },
     {
-        "id": "jewelry",
-        "type": "checkbox",
-        "name": "Reroll rings/amulets/jewels",
-        "description": "Recipes: 2 rings -> amulet, 2 amulets -> ring, 2 magic jewels -> rare jewel, 2 rare jewels -> magic jewel.",
-        "defaultValue": true
-    },
-    {
         "id": "socketing",
         "type": "checkbox",
-        "name": "Toggle sockets in items",
+        "name": "Toggle sockets",
         "description": "Toggle sockets in normal and superior items - rerolls the item - item + Stamina Potion.",
         "defaultValue": true
     },
     {
         "id": "addSockets",
         "type": "checkbox",
-        "name": "Add sockets to items",
+        "name": "Add sockets",
         "description": "Add sockets to Unique/Set/Rare/Magic items - item + Antidote Potion + Portal Scroll.",
         "defaultValue": true
     },
     {
-        "id": "upgrade",
+        "id": "removeItems",
         "type": "checkbox",
-        "name": "Upgrade - Basic->Exceptional->Elite",
-        "description": "Upgrade Rare/Set/Unique items to Exceptional or Elite - item + Antidote Potion + Identify Scroll.",
-        "defaultValue": true
-    },
-    {
-        "id": "reroll",
-        "type": "checkbox",
-        "name": "Reroll item",
-        "description": "Reroll an item - item + Stamina Potion + Identify Scroll.",
+        "name": "Remove items from sockets",
+        "description": "Recipes to remove items from sockets (item + Thawing potion). May require the ExpandedCube mod to handle big items with lots of runes.",
         "defaultValue": true
     },
     {
@@ -88,6 +88,18 @@
         "name": "Cycle between other potions/scrolls",
         "description": "Cycle between antidote -> stamina -> thawing -> identify -> portal.",
         "defaultValue": true
+    },
+    {
+        "id": "updateRecipesPanel",
+        "type": "select",
+        "name": "Update recipes panel",
+        "description": "If Breakpoint and Recipe UI Panels mod is installed, update the recipe panel to include the new recipes.",
+        "defaultValue": "disabled",
+        "options": [
+            { "value": "disabled", "label": "Do not update recipe panel" },
+            { "value": "top", "label": "Put added recipes at top of panel" },
+            { "value": "bottom", "label": "Put added recipes at bottom of panel" }
+        ]
     },
     {
         "id": "fixUniques",
