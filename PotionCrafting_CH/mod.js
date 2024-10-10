@@ -205,6 +205,20 @@ const POTION_TYPES = {
     'Mana':   [ 'mp1', 'mp2', 'mp3', 'mp4', 'mp5' ],
 };
 
+
+const QUALITIES = {
+    weap: [ 'nor', 'hiq', 'mag', 'rar' ],
+    armo: [ 'nor', 'hiq', 'mag', 'rar' ],
+    rin:  [ 'mag', 'rar' ],
+    amu:  [ 'mag', 'rar' ],
+    jew:  [ 'mag', 'rar' ],
+    cm1:  [ 'mag' ],
+    cm2:  [ 'mag' ],
+    cm3:  [ 'mag' ],
+};
+
+
+
 if (config.toNormal || config.upgrade || config.reroll || config.jewelry) {
     addRecipeHeader('Reroll items');
 }
@@ -229,22 +243,24 @@ if (config.reroll) {
         };
         cubemain.rows.push(recipe);
 
-        const recipe2 = {
-            description: `${LABELS[itemType]} + Stamina Potion + Identify Scroll + Full Rejuvination Potion -> reroll high level item`,
-            enabled: 1,
-            version: 100,
-            numinputs: 4,
-            'input 1': `"${itemType}"`,
-            'input 2': 'vps',
-            'input 3': 'isc',
-            'input 4': 'rvl',
-            lvl: 100,
-            output: '"useitem,reg"',
-            'output b': 'vps',
-            'output c': 'isc',
-            '*eol\r': 0,
-        };
-        cubemain.rows.push(recipe2);
+        QUALITIES[itemType].forEach((quality) => {
+            const recipe2 = {
+                description: `${LABELS[quality]} ${LABELS[itemType]} + Stamina Potion + Identify Scroll + Full Rejuvination Potion -> reroll ae high level`,
+                enabled: 1,
+                version: 100,
+                numinputs: 4,
+                'input 1': `"${itemType},${quality}"`,
+                'input 2': 'vps',
+                'input 3': 'isc',
+                'input 4': 'rvl',
+                lvl: 100,
+                output: `"${itemType},${quality}"`,
+                'output b': 'vps',
+                'output c': 'isc',
+                '*eol\r': 0,
+            };
+            cubemain.rows.push(recipe2);
+        });
     });
 }
 
