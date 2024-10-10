@@ -33,6 +33,7 @@ If __`Upgrade item`__ is enabled, then recipes are added to:
 If __`Reroll item`__ is enabled, then recipes are added to reroll an item.
 
 - The base reroll recipe is: item + Stamina Potion + Identify Scroll.
+- The recipe: item + Stamina Potion + Identify Scroll + Full Rejuvination Potion rerolls at high item level.
 - The recipe: item + Antidote Potion + Stamina Potion + Identify Scroll converts Normal/Superior -> Magic -> Rare.
 - The recipe: item + Antidote Potion + Identify Tome converts to a Set item.
 If the item is inappropriate or not high enough ilvl, it will become a failed set item.
@@ -50,24 +51,22 @@ If __`Reroll jewelry`__ is enabled, then the following recipes are added:
 - 2 Rare amulets -> Rare ring
 - 2 Magic jewels -> Rare jewel
 - 2 Rare jewels -> Magic jewel
-
-If __`Reroll charms`__ is enabled, then recipes are to take two magic charms of the same size and return one new charm.
-
-- 2 Charms -> Charm
-- 2 Charms + Antidote Potion -> High level Charm
+- 2 Charms -> Charm of same size
+- Charm + Stamina Portal -> next size of charme
+- Amulet + Thawing Potion -> Jewel
+- Ring + Thawing Potion -> Small Charm
 
 ## Socketing
 
 If __`Toggle sockets`__ is enabled, then recipes are added to toggle sockets in normal and superior items.
 This will reroll the item.
 
-- The recipe toggle sockets on/off is: item + Stamina Potion
-- The recipe: item + Stamina Potion + Minor Health Potion tries to set 1 socket
-- The recipe: item + Stamina Potion + Light Health Potion tries to set 2 sockets
-- The recipe: item + Stamina Potion + (Standard) Health Potion tries to set 3 sockets
-- The recipe: item + Stamina Potion + Greater Health Potion tries to set 4 sockets
-- The recipe: item + Stamina Potion + Super Health Potion tries to set 5 sockets
-- The recipe: item + Stamina Potion + Full Rejuvination Potion tries to set 6 sockets
+- The recipe to toggle sockets on/off is: item + Stamina Potion
+- The recipe: item + Stamina Potion + Minor Health Potion tries to set 2 sockets.
+- The recipe: item + Stamina Potion + Light Health Potion tries to set 3 sockets.
+- The recipe: item + Stamina Potion + (Standard) Health Potion tries to set 4 sockets.
+- The recipe: item + Stamina Potion + Greater Health Potion tries to set 5 sockets.
+- The recipe: item + Stamina Potion + Super Health Potion tries to set 6 sockets.
 
 If __`Add sockets`__ is enabled, then recipes are added to add sockets to Unique/Set/Rare/Magic items.
 
@@ -78,7 +77,7 @@ recovering both the item and the socket fillers.
 
 - The recipe is item + Thawing potion.
 
-Since a 2x4 item may have up to 6 sockets, unsocketing such an item will require an Expanded Cube mod to have enough space.
+Since a 2x4 weapon may have up to 6 sockets, unsocketing such an item will require an Expanded Cube mod to have enough space.
 
 ## Potions
 
@@ -108,7 +107,7 @@ If __`Convert between Health and Mana potions`__ is enabled, these recipes are a
 
 If __`Recipes for Full Rejuvination potion`__ is enabled, these recipes are added:
 
-- 1 Health Potion + 1 Mana Potion -> Full Rejuvination Potion
+- 1 Health Potion + 1 Mana Potion -> Small Rejuvination Potion
 - 2 Small Rejuv -> Full Rejuvination Potion
 
 If __`Cycle between other potions/scrolls`__ is enabled, these recipes are added:
@@ -135,3 +134,4 @@ This code is from olegbl's [Horadric Forging mod](https://www.nexusmods.com/diab
 - 1.1 Fix bug removing sockets from items
 - 1.2 Add reroll as Magic/Rare recipes
 - 1.3 Include added recipes in recipe panel if "Breakpoint and Recipe UI Panels" mod is installed
+- 1.4 Rearrange some recipes. Add recipes to generate charms and jewels, since they cannot be gambled.

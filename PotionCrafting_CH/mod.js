@@ -1,4 +1,5 @@
 // PotionCrafting_CH
+
 const cubemainFilename = 'global\\excel\\cubemain.txt';
 const cubemain = D2RMM.readTsv(cubemainFilename);
 
@@ -179,6 +180,9 @@ const UPGRADE = {
     nor: 'hiq',
     bas: 'exc',
     exc: 'eli',
+    cm1: 'cm2',
+    cm2: 'cm3',
+    cm3: 'cm1',
 };
 
 const MAX_SOCKETS = {
@@ -201,19 +205,59 @@ const POTION_TYPES = {
     'Mana':   [ 'mp1', 'mp2', 'mp3', 'mp4', 'mp5' ],
 };
 
-if (config.toNormal || config.upgrade || config.reroll || config.charms || config.jewelry) {
+if (config.toNormal || config.upgrade || config.reroll || config.jewelry) {
     addRecipeHeader('Reroll items');
+}
+
+if (config.reroll) {
+    addRecipeEntry('Item + Stamina + Identify -> reroll item');
+    addRecipeEntry('Item + Stamina + Identify + Full Rejuv -> reroll high');
+    ['weap', 'armo', 'rin', 'amu', 'jew', 'cm1', 'cm2', 'cm3'].forEach((itemType) => {
+        const recipe = {
+            description: `${LABELS[itemType]} + Stamina Potion + Identify Scroll -> reroll item`,
+            enabled: 1,
+            version: 100,
+            numinputs: 3,
+            'input 1': `"${itemType}"`,
+            'input 2': 'vps',
+            'input 3': 'isc',
+            ilvl: 100,
+            output: '"useitem,reg"',
+            'output b': 'vps',
+            'output c': 'isc',
+            '*eol\r': 0,
+        };
+        cubemain.rows.push(recipe);
+
+        const recipe2 = {
+            description: `${LABELS[itemType]} + Stamina Potion + Identify Scroll + Full Rejuvination Potion -> reroll high level item`,
+            enabled: 1,
+            version: 100,
+            numinputs: 4,
+            'input 1': `"${itemType}"`,
+            'input 2': 'vps',
+            'input 3': 'isc',
+            'input 4': 'rvl',
+            lvl: 100,
+            output: '"useitem,reg"',
+            'output b': 'vps',
+            'output c': 'isc',
+            '*eol\r': 0,
+        };
+        cubemain.rows.push(recipe2);
+    });
 }
 
 if (config.toNormal) {
     addRecipeEntry('item + Antidote + Stamina -> Normal/Superior');
+    ['weap', 'armo'].forEach((itemType) => {
     ['uni', 'set', 'rar', 'mag', 'hiq'].forEach((itemQuality) => {
         const recipe = {
-            description: `${LABELS[itemQuality]} item + Antidote Potion + Stamina Potion -> Normal item`,
+            description: `${LABELS[itemQuality]} ${LABELS[itemType]} + Antidote Potion + Stamina Potion -> Normal item`,
             enabled: 1,
             version: 100,
             numinputs: 3,
-            'input 1': `"any,${itemQuality}"`,
+            'input 1': `"${itemType},${itemQuality}"`,
             'input 2': 'yps',
             'input 3': 'vps',
             ilvl: 100,
@@ -222,6 +266,7 @@ if (config.toNormal) {
             '*eol\r': 0,
         };
         cubemain.rows.push(recipe);
+    });
     });
 
     ['low', 'nor'].forEach((itemQuality) => {
@@ -299,25 +344,6 @@ if (config.upgrade) {
 }
 
 if (config.reroll) {
-    addRecipeEntry('Item + Stamina + Identify -> reroll item');
-    ['weap', 'armo', 'rin', 'amu', 'jew', 'cm1', 'cm2', 'cm3'].forEach((itemType) => {
-        const recipe = {
-            description: `${LABELS[itemType]} + Stamina Potion + Identify Scroll -> reroll item`,
-            enabled: 1,
-            version: 100,
-            numinputs: 3,
-            'input 1': `"${itemType}"`,
-            'input 2': 'vps',
-            'input 3': 'isc',
-            ilvl: 100,
-            output: '"useitem,reg"',
-            'output b': 'vps',
-            'output c': 'isc',
-            '*eol\r': 0,
-        };
-        cubemain.rows.push(recipe);
-    });
-
     addRecipeEntry('Item + Antidote + Stamina + Identify -> magic/rare');
     ['hiq', 'nor'].forEach((qualityLevel) => {
     ['weap', 'armo'].forEach((itemType) => {
@@ -426,13 +452,11 @@ if (config.jewelry) {
 
     addRecipeEntry('2 rare jewels -> magic jewel');
     AddJewelryRecipe('jew', 'rar', 'jew', 'mag');
-}
 
-if (config.charms) {
+    addRecipeEntry('charm + Stamina -> next size charm');
     addRecipeEntry('2 charms -> charm');
-    addRecipeEntry('2 charms + Antidote -> high level charm');
     ['cm1', 'cm2', 'cm3'].forEach((itemType) => {
-        const recipe = {
+        const recipe1 = {
             description: `2 ${LABELS[itemType]}s -> ${LABELS[itemType]}`,
             enabled: 1,
             version: 100,
@@ -442,19 +466,56 @@ if (config.charms) {
             output: `"${itemType},mag"`,
             '*eol\r': 0,
         };
-        cubemain.rows.push(recipe);
+        cubemain.rows.push(recipe1);
+
+        const nextSize = UPGRADE[itemType]
         const recipe2 = {
-            description: `2 ${LABELS[itemType]}s + Antidote Potion -> High level ${LABELS[itemType]}`,
+            description: `${LABELS[itemType]} + Stamina Potion -> ${LABELS[nextSize]}`,
             enabled: 1,
             version: 100,
-            numinputs: 3,
-            'input 1': `"${itemType},mag,qty=2"`,
-            'input 2': 'yps',
+            numinputs: 2,
+            'input 1': `"${itemType},mag"`,
+            'input 2': 'vps',
             lvl: 100,
-            output: `"${itemType},mag"`,
+            output: `"${nextSize},mag"`,
+            'output b': 'vps',
             '*eol\r': 0,
         };
         cubemain.rows.push(recipe2);
+    });
+
+    addRecipeEntry('Amulet + Thawing -> Jewel');
+    ['mag', 'rar'].forEach((itemQuality) => {
+        const recipe = {
+            description: `${LABELS[itemQuality]} Amulet + Thawing Potion -> jewel`,
+            enabled: 1,
+            version: 100,
+            numinputs: 2,
+            'input 1': `"amu,${itemQuality}"`,
+            'input 2': 'wms',
+            ilvl: 100,
+            output: '"jew,${itemQuality}"',
+            'output b': 'vps',
+            '*eol\r': 0,
+        };
+        cubemain.rows.push(recipe);
+    });
+
+    addRecipeEntry('Ring + Thawing -> Charm');
+    ['mag', 'rar'].forEach((itemQuality) => {
+        const recipe = {
+            description: `${LABELS[itemQuality]} Ring + Thawing Potion -> Small Charm`,
+            enabled: 1,
+            version: 100,
+            numinputs: 2,
+            'input 1': `"rin,${itemQuality}"`,
+            'input 2': 'wms',
+            ilvl: 100,
+            output: '"cm1,mag"',
+            'output b': 'vps',
+            '*eol\r': 0,
+        };
+        cubemain.rows.push(recipe);
     });
 }
 
@@ -483,7 +544,6 @@ if (config.socketing || config.addSockets || config.removeItems) {
 if (config.socketing) {
     addRecipeEntry('item + Stamina -> reroll toggling sockets');
     addRecipeEntry('item + Stamina + Health -> specific # of sockets');
-    addRecipeEntry('item + Stamina + Full Rejuv -> 6 sockets');
     ['hiq', 'nor'].forEach((qualityLevel) => {
         ['tors', 'helm', 'shld', 'weap'].forEach((itemType) => {
             const recipeRemoveSockets = {
@@ -517,17 +577,18 @@ if (config.socketing) {
             };
             cubemain.rows.push(recipeAddSockets);
 
-            for (let tier = 0; tier <= 4 && tier < MAX_SOCKETS[itemType]; tier++) {
+            for (let sockets = 2; sockets <= MAX_SOCKETS[itemType]; sockets++) {
+                const tier = sockets - 2;
                 const potion = POTION_TYPES.Health[tier];
                 const recipe = {
-                    description: `${LABELS[qualityLevel]} ${LABELS[itemType]} + Stamina Potion + ${POTION_LEVELS[tier]} Health Potion -> ${tier + 1} Socketed ${LABELS[itemType]}`,
+                    description: `${LABELS[qualityLevel]} ${LABELS[itemType]} + Stamina Potion + ${POTION_LEVELS[tier]} Health Potion -> ${sockets} Socketed ${LABELS[itemType]}`,
                     enabled: 1,
                     version: 100,
                     numinputs: 3,
                     'input 1': `"${itemType},${qualityLevel},nos"`,
                     'input 2': 'vps',
                     'input 3': potion,
-                    output: `"useitem,${qualityLevel},sock=${tier + 1}"`,
+                    output: `"useitem,${qualityLevel},sock=${sockets}"`,
 //                     output: `"useitem,${qualityLevel}"`,
 //                     'mod 1': 'sock',
 //                     'mod 1 min': tier + 1,
@@ -538,27 +599,6 @@ if (config.socketing) {
                     '*eol\r': 0,
                 };
                 cubemain.rows.push(recipe);
-            }
-            if (itemType == 'weap') {
-                const recipe6 = {
-                    description: `${LABELS[qualityLevel]} ${LABELS[itemType]} + Stamina Potion + Full Rejuvination Potion -> 6 Socketed ${LABELS[itemType]}`,
-                    enabled: 1,
-                    version: 100,
-                    numinputs: 3,
-                    'input 1': `"${itemType},${qualityLevel},nos"`,
-                    'input 2': 'vps',
-                    'input 3': 'rvl',
-                    output: `"useitem,${qualityLevel},sock=6"`,
-    //                 output: `"useitem,${qualityLevel}"`,
-    //                 'mod 1': 'sock',
-    //                 'mod 1 min': 6,
-    //                 'mod 1 max': 6,
-                    'output b': 'vps',
-                    'output c': 'rvl',
-                    ilvl: 100,
-                    '*eol\r': 0,
-                };
-                cubemain.rows.push(recipe6);
             }
         });
     });
@@ -598,7 +638,7 @@ if (config.removeItems) {
             enabled: 1,
             version: 100,
             numinputs: 2,
-            'input 1': `"${itemType},any"`,
+            'input 1': `"${itemType},sock"`,
             'input 2': 'wms',
             output: 'useitem,rem',
             ilvl: 100,
@@ -667,21 +707,21 @@ if (config.healthManaConversion) {
 }
 
 if (config.easyRejuvinationRecipe) {
-    addRecipeEntry('1 Health + 1 Mana -> Full Rejuvination');
+    addRecipeEntry('1 Health + 1 Mana -> Small Rejuvination');
     const recipe1 = {
-        description: '1 Health Potion + 1 Mana Potion -> Full Rejuvination Potion',
+        description: '1 Health Potion + 1 Mana Potion -> Small Rejuvination Potion',
         enabled: 1,
         version: 100,
         numinputs: 2,
         'input 1': 'hpot',
         'input 2': 'mpot',
-        output: 'rvl',
+        output: 'rvs',
         '*eol\r': 0,
     };
     cubemain.rows.push(recipe1);
-    addRecipeEntry('2 Small Rejuv -> Full Rejuvination');
+    addRecipeEntry('2 Small Rejuvination -> Full');
     const recipe2 = {
-        description: '2 Small Rejuv -> Full Rejuvination Potion',
+        description: '2 Small Rejuvination -> Full Rejuvination Potion',
         enabled: 1,
         version: 100,
         numinputs: 2,

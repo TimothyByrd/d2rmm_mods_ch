@@ -3,7 +3,7 @@
     "description": "Craft items using potions",
     "author": "CelticHound",
     "website": "https://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/PotionCrafting_CH",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "config": [
     {
         "id": "toNormal",
@@ -30,14 +30,7 @@
         "id": "jewelry",
         "type": "checkbox",
         "name": "Reroll jewelry",
-        "description": "Recipes: 2 rings -> amulet, 2 amulets -> ring, 2 magic jewels -> rare jewel, 2 rare jewels -> magic jewel.",
-        "defaultValue": true
-    },
-    {
-        "id": "charms",
-        "type": "checkbox",
-        "name": "Reroll charms",
-        "description": "Two magic charms of same size -> one new charm.",
+        "description": "Recipes are two of some kind of jewellry to one of something else.",
         "defaultValue": true
     },
     {
