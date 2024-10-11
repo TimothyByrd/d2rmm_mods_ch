@@ -1,0 +1,21 @@
+{
+  "name": "Better Rune Visibility",
+  "description": "Alternate sets of rune glyphs to make them easier to distinguish",
+  "author": "Sandman/park0n9",
+  "website": "",
+  "version": "1.0",
+  "config": [
+  {
+      "id": "selection",
+      "type": "select",
+      "name": "Rune Glyph Set",
+      "description": "Which set of rune glyphs to use.",
+      "defaultValue": "sandman",
+      "options": [
+          { "value": "sandman", "label": "Sandman's Better Rune Visibility" },
+          { "value": "park0n9_eng", "label": "park0n9's English Better Better Rune Visibility" },
+          { "value": "park0n9_kor", "label": "park0n9's Korean Better Better Rune Visibility" }
+      ]
+  }
+  ]
+}
