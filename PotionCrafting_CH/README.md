@@ -135,4 +135,4 @@ This code is from olegbl's [Horadric Forging mod](https://www.nexusmods.com/diab
 - 1.2 Add reroll as Magic/Rare recipes
 - 1.3 Include added recipes in recipe panel if "Breakpoint and Recipe UI Panels" mod is installed
 - 1.4 Rearrange some recipes. Add recipes to generate charms and jewels, since they cannot be gambled.
-- 1.4 Fix high-level recipe
+- 1.4.1 Fix high-level recipe

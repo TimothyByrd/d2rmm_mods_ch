@@ -254,7 +254,7 @@ if (config.reroll) {
                 'input 3': 'isc',
                 'input 4': 'rvl',
                 lvl: 100,
-                output: `"${itemType},${quality}"`,
+                output: `"usetype,${quality}"`,
                 'output b': 'vps',
                 'output c': 'isc',
                 '*eol\r': 0,
@@ -776,6 +776,107 @@ if (config.cycleThroughOtherItems) {
         };
         cubemain.rows.push(recipe);
     }
+}
+
+const JEWEL_PREFIXES = {
+    'res-all':  { label: 'All Resistaances', gemLabel: 'Diamond', gem: 'gpw' },
+    'res-cold': { label: 'Resist Cold', gemLabel: 'Sapphire', gem: 'gpb' },
+    'res-fire': { label: 'Resist Fire', gemLabel: 'Ruby', gem: 'gpr' },
+    'res-ltng': { label: 'Resist Lightning', gemLabel: 'Topaz', gem: 'gpy' },
+    'res-pois': { label: 'Resist Poison', gemLabel: 'Emerald', gem: 'gpg' },
+    'dmg%':     { label: '% Damage', gemLabel: 'Amethyst', gem: 'gpv' },
+    'dmg-max':  { label: 'Max Damage', gemLabel: 'Skull', gem: 'skz' },
+};
+
+const JEWEL_SUFFIXES = {
+    'swing1': { label: 'Attack Speed', potionLabel: 'Stamina', potion: 'vps' },
+    'ease': { label: 'Lower Requirements', potionLabel: 'Thawing', potion: 'wms' },
+};
+
+
+if (config.crazy) {
+    addRecipeHeader('Experimental');
+
+    const prefixKeys = Object.keys(JEWEL_PREFIXES);
+    const prefixesFound = {};
+    const magicprefixFilename = 'global\\excel\\magicprefix.txt';
+    const magicprefix = D2RMM.readTsv(magicprefixFilename);
+    let rowNum = 0;
+    magicprefix.rows.forEach((row) => {
+        if (row.itype1 == 'jewl' && prefixKeys.indexOf(row.mod1code) !== -1)
+            prefixesFound[row.mod1code] = rowNum;
+        rowNum++;
+    });
+    //D2RMM.writeTsv(magicprefixFilename, magicprefix);
+
+    addRecipeEntry(`Jewel + Perfect Gem -> Resist Jewel`);
+    addRecipeEntry(`Jewel + Perfect Amethyst/Skull -> Damage Jewel`);
+    for (const [key, value] of Object.entries(prefixesFound)) {
+        const prefixEntry = JEWEL_PREFIXES[key];
+        const recipe = {
+            description: `Jewel + Perfect ${prefixEntry.gemLabel} -> ${prefixEntry.label} Jewel`,
+            enabled: 1,
+            version: 100,
+            numinputs: 2,
+            'input 1': 'jew',
+            'input 2': prefixEntry.gem,
+            output: `"jew,mag,pre=${value}`,
+            'output b': prefixEntry.gem,
+            '*eol\r': 0,
+        };
+        cubemain.rows.push(recipe);
+    };
+
+    const suffixKeys = Object.keys(JEWEL_SUFFIXES);
+    const suffixesFound = {};
+    const magicsuffixFilename = 'global\\excel\\magicsuffix.txt';
+    const magicsuffix = D2RMM.readTsv(magicsuffixFilename);
+    rowNum = 0;
+    magicsuffix.rows.forEach((row) => {
+        if (row.itype1 == 'jewl' && suffixKeys.indexOf(row.mod1code) !== -1)
+            suffixesFound[row.mod1code] = rowNum;
+        rowNum++;
+    });
+    //D2RMM.writeTsv(magicsuffixFilename, magicsuffix);
+
+    addRecipeEntry(`Jewel + Stamina -> Jewel of Fervor`);
+    addRecipeEntry(`Jewel + Thawing -> Jewel of Freedom`);
+    for (const [key, value] of Object.entries(suffixesFound)) {
+        const suffixEntry = JEWEL_SUFFIXES[key];
+        const recipe = {
+            description: `Jewel + ${suffixEntry.potionLabel} Potion -> Jewel of ${suffixEntry.label}`,
+            enabled: 1,
+            version: 100,
+            numinputs: 2,
+            'input 1': 'jew',
+            'input 2': suffixEntry.potion,
+            output: `"jew,mag,suf=${value}`,
+            'output b': suffixEntry.potion,
+            '*eol\r': 0,
+        };
+        cubemain.rows.push(recipe);
+    };
+
+    Object.entries(prefixesFound).forEach(([keyp, valuep]) => {
+    Object.entries(suffixesFound).forEach(([keys, values]) => {
+        const prefixEntry = JEWEL_PREFIXES[keyp];
+        const suffixEntry = JEWEL_SUFFIXES[keys];
+        const recipe = {
+            description: `Jewel + Perfect ${prefixEntry.gemLabel} + ${suffixEntry.potionLabel} Potion -> ${prefixEntry.label} Jewel of ${suffixEntry.label}`,
+            enabled: 1,
+            version: 100,
+            numinputs: 3,
+            'input 1': 'jew',
+            'input 2': prefixEntry.gem,
+            'input 3': suffixEntry.potion,
+            output: `"jew,mag,pre=${valuep},suf=${values}`,
+            'output b': prefixEntry.gem,
+            'output c': suffixEntry.potion,
+            '*eol\r': 0,
+        };
+        cubemain.rows.push(recipe);
+    });
+    });
 }
 
 D2RMM.writeTsv(cubemainFilename, cubemain);
