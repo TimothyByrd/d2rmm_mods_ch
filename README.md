@@ -31,7 +31,9 @@ Ported to D2RMM from [Better Potion Visibility by Sandman](https://www.nexusmods
 
 ## [BetterRuneVisibility_CH](https://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/BetterRuneVisibility_CH)
 
-This mod provides alternate sets of rune glyphs to make them easier to distinguish. Ported to D2RMM from
+This mod provides alternate sets of rune glyphs to make them easier to distinguish.
+
+Ported to D2RMM from
 [Sandman's Better Rune Visibility](https://www.nexusmods.com/diablo2resurrected/mods/72)
 and
 [park0n9's Better Better Rune Visibility](https://www.nexusmods.com/diablo2resurrected/mods/77).
