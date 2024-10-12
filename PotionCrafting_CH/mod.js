@@ -779,20 +779,19 @@ if (config.cycleThroughOtherItems) {
 }
 
 const JEWEL_PREFIXES = {
-    'res-all':  { label: 'All Resistaances', gemLabel: 'Diamond', gem: 'gpw' },
-    'res-cold': { label: 'Resist Cold', gemLabel: 'Sapphire', gem: 'gpb' },
-    'res-fire': { label: 'Resist Fire', gemLabel: 'Ruby', gem: 'gpr' },
-    'res-ltng': { label: 'Resist Lightning', gemLabel: 'Topaz', gem: 'gpy' },
-    'res-pois': { label: 'Resist Poison', gemLabel: 'Emerald', gem: 'gpg' },
-    'dmg%':     { label: '% Damage', gemLabel: 'Amethyst', gem: 'gpv' },
-    'dmg-max':  { label: 'Max Damage', gemLabel: 'Skull', gem: 'skz' },
+    'res-all':  { label: 'All Resistaances', inputLabel: 'Perfect Diamond', input: 'gpw' },
+    'res-cold': { label: 'Resist Cold', inputLabel: 'Perfect Sapphire', input: 'gpb' },
+    'res-fire': { label: 'Resist Fire', inputLabel: 'Perfect Ruby', input: 'gpr' },
+    'res-ltng': { label: 'Resist Lightning', inputLabel: 'Perfect Topaz', input: 'gpy' },
+    'res-pois': { label: 'Resist Poison', inputLabel: 'Perfect Emerald', input: 'gpg' },
+    'dmg%':     { label: '% Damage', inputLabel: 'Perfect Amethyst', input: 'gpv' },
+    'dmg-max':  { label: 'Max Damage', inputLabel: 'Perfect Skull', input: 'skz' },
 };
 
 const JEWEL_SUFFIXES = {
-    'swing1': { label: 'Attack Speed', potionLabel: 'Stamina', potion: 'vps' },
-    'ease': { label: 'Lower Requirements', potionLabel: 'Thawing', potion: 'wms' },
+    'swing1': { label: 'Attack Speed', inputLabel: 'Stamina Potion', input: 'vps' },
+    'ease': { label: 'Lower Requirements', inputLabel: 'Thawing Potion', input: 'wms' },
 };
-
 
 if (config.crazy) {
     addRecipeHeader('Experimental');
@@ -809,19 +808,20 @@ if (config.crazy) {
     });
     //D2RMM.writeTsv(magicprefixFilename, magicprefix);
 
-    addRecipeEntry(`Jewel + Perfect Gem -> Resist Jewel`);
-    addRecipeEntry(`Jewel + Perfect Amethyst/Skull -> Damage Jewel`);
+    addRecipeEntry('Jewel + Perfect Gem -> Resist Jewel');
+    addRecipeEntry('ewel + Perfect Amethyst/Skull -> Damage Jewel');
     for (const [key, value] of Object.entries(prefixesFound)) {
         const prefixEntry = JEWEL_PREFIXES[key];
         const recipe = {
-            description: `Jewel + Perfect ${prefixEntry.gemLabel} -> ${prefixEntry.label} Jewel`,
+            description: `Jewel + ${prefixEntry.inputLabel} -> ${prefixEntry.label} Jewel`,
             enabled: 1,
             version: 100,
             numinputs: 2,
             'input 1': 'jew',
-            'input 2': prefixEntry.gem,
+            'input 2': prefixEntry.input,
+            ilvl: 100,
             output: `"jew,mag,pre=${value}`,
-            'output b': prefixEntry.gem,
+            'output b': prefixEntry.input,
             '*eol\r': 0,
         };
         cubemain.rows.push(recipe);
@@ -839,19 +839,20 @@ if (config.crazy) {
     });
     //D2RMM.writeTsv(magicsuffixFilename, magicsuffix);
 
-    addRecipeEntry(`Jewel + Stamina -> Jewel of Fervor`);
-    addRecipeEntry(`Jewel + Thawing -> Jewel of Freedom`);
+    addRecipeEntry('Jewel + Stamina -> Jewel of Fervor');
+    addRecipeEntry('Jewel + Thawing -> Jewel of Freedom');
     for (const [key, value] of Object.entries(suffixesFound)) {
         const suffixEntry = JEWEL_SUFFIXES[key];
         const recipe = {
-            description: `Jewel + ${suffixEntry.potionLabel} Potion -> Jewel of ${suffixEntry.label}`,
+            description: `Jewel + ${suffixEntry.inputLabel} -> Jewel of ${suffixEntry.label}`,
             enabled: 1,
             version: 100,
             numinputs: 2,
             'input 1': 'jew',
-            'input 2': suffixEntry.potion,
+            'input 2': suffixEntry.input,
+            ilvl: 100,
             output: `"jew,mag,suf=${value}`,
-            'output b': suffixEntry.potion,
+            'output b': suffixEntry.input,
             '*eol\r': 0,
         };
         cubemain.rows.push(recipe);
@@ -862,16 +863,193 @@ if (config.crazy) {
         const prefixEntry = JEWEL_PREFIXES[keyp];
         const suffixEntry = JEWEL_SUFFIXES[keys];
         const recipe = {
-            description: `Jewel + Perfect ${prefixEntry.gemLabel} + ${suffixEntry.potionLabel} Potion -> ${prefixEntry.label} Jewel of ${suffixEntry.label}`,
+            description: `Jewel + ${prefixEntry.inputLabel} + ${suffixEntry.inputLabel} -> ${prefixEntry.label} Jewel of ${suffixEntry.label}`,
             enabled: 1,
             version: 100,
             numinputs: 3,
             'input 1': 'jew',
-            'input 2': prefixEntry.gem,
-            'input 3': suffixEntry.potion,
+            'input 2': prefixEntry.input,
+            'input 3': suffixEntry.input,
+            ilvl: 100,
             output: `"jew,mag,pre=${valuep},suf=${values}`,
-            'output b': prefixEntry.gem,
-            'output c': suffixEntry.potion,
+            'output b': prefixEntry.input,
+            'output c': suffixEntry.input,
+            '*eol\r': 0,
+        };
+        cubemain.rows.push(recipe);
+    });
+    });
+}
+
+const GCHARM_PREFIXES = {
+    'Shimmering':  { label: 'Shimmering', inputLabel: 'Perfect Diamond', input: 'gpw' },
+    'Sharp':  { label: 'Sharp', inputLabel: 'Perfect Skull', input: 'skz' },
+};
+
+const GCHARM_SKILL_PREFIXES = [
+    { label: "Fletcher's", class: 'ama', skilltab: 0, inputLabel: 'Chipped Topaz', input: 'gcy' },
+    { label: "Acrobat's", class: 'ama', skilltab: 1, inputLabel: 'Flawed Topaz', input: 'gfy' },
+    { label: "Harpoonist's", class: 'ama', skilltab: 2, inputLabel: 'Flawless Topaz', input: 'gly' },
+    { label: "Burning", class: 'sor', skilltab: 3, inputLabel: 'Chipped Sapphire', input: 'gcb' },
+    { label: "Sparking", class: 'sor', skilltab: 4, inputLabel: 'Flawed Sapphire', input: 'gfb' },
+    { label: "Chilling", class: 'sor', skilltab: 5, inputLabel: 'Flawless Sapphire', input: 'glb' },
+    { label: "Hexing", class: 'nec', skilltab: 6, inputLabel: 'Chipped Skull', input: 'skc' },
+    { label: "Fungal", class: 'nec', skilltab: 7, inputLabel: 'Flawed Skull', input: 'skf' },
+    { label: "Graverobber's", class: 'nec', skilltab: 8, inputLabel: 'Flawless Skull', input: 'skl' },
+    { label: "Lion Branded", class: 'pal', skilltab: 9, inputLabel: 'Chipped Diamond', input: 'gcw' },
+    { label: "Captain's", class: 'pal', skilltab: 10, inputLabel: 'Flawed Diamond', input: 'gfw' },
+    { label: "Preserver's", class: 'pal', skilltab: 11, inputLabel: 'Flawless Diamond', input: 'glw' },
+    { label: "Expert's", class: 'bar', skilltab: 12, inputLabel: 'Chipped Amethyst', input: 'gcv' },
+    { label: "Fanatic", class: 'bar', skilltab: 13, inputLabel: 'Flawed Amethyst', input: 'gfv' },
+    { label: "Sounding", class: 'bar', skilltab: 14, inputLabel: 'Flawless Amethyst', input: 'gzv' },
+    { label: "Trainer's", class: 'dru', skilltab: 15, inputLabel: 'Chipped Ruby', input: 'gcr' },
+    { label: "Spiritual", class: 'dru', skilltab: 16, inputLabel: 'Flawed Ruby', input: 'gfr' },
+    { label: "Nature's", class: 'dru', skilltab: 17, inputLabel: 'Flawless Ruby', input: 'glr' },
+    { label: "Entrapping", class: 'ass', skilltab: 18, inputLabel: 'Chipped Emerald', input: 'gcg' },
+    { label: "Mentalist's", class: 'ass', skilltab: 19, inputLabel: 'Flawed Emerald', input: 'gfg' },
+    { label: "Shogukusha's", class: 'ass', skilltab: 20, inputLabel: 'Flawless Emerald', input: 'glg' },
+    ];
+
+const GCHARM_SUFFIXES = {
+    'of Vita': { label: 'Vita', inputLabel: 'Health Potion', input: 'hpot', output: 'hp5' },
+    'of Balance': { label: 'Balance', inputLabel: 'Mana Potion', input: 'mpot', output: 'mp5' },
+    'of Greed': { label: 'Greed', inputLabel: 'Topaz', input: 'gsy', output: 'gsy' },
+    'of Inertia': { label: 'Inertia', inputLabel: 'Stamina Potion', input: 'vps', output: 'vps' },
+    'of Substinence': { label: 'Sustenance', inputLabel: 'Antidote Potion', input: 'yps', output: 'yps' },
+};
+
+
+if (config.crazy) {
+    //addRecipeHeader('Experimental');
+
+    const prefixKeys = Object.keys(GCHARM_PREFIXES);
+    const prefixesFound = {};
+    const skillPrefixesFound = [];
+    const magicprefixFilename = 'global\\excel\\magicprefix.txt';
+    const magicprefix = D2RMM.readTsv(magicprefixFilename);
+    let rowNum = 0;
+    magicprefix.rows.forEach((row) => {
+        if (row.itype1 == 'lcha' && prefixKeys.indexOf(row['Name']) !== -1)
+            prefixesFound[row['Name']] = rowNum;
+        else if (row.itype1 == 'lcha' && row.mod1code == 'skilltab')
+            skillPrefixesFound[row.mod1param] = rowNum;
+        rowNum++;
+    });
+    //D2RMM.writeTsv(magicprefixFilename, magicprefix);
+
+    //console.warn(`Prefixes: ${Object.keys(prefixesFound)}`);
+    //console.warn(`Skills: ${skillPrefixesFound}`);
+
+    addRecipeEntry('Grand Charm + Chipped/Flawed/Flawless Gem -> Skiller');
+    for (let index = 0; index < GCHARM_SKILL_PREFIXES.length; index++) {
+        if (typeof skillPrefixesFound[index] !== 'undefined') {
+            const prefixEntry = GCHARM_SKILL_PREFIXES[index];
+            const recipe = {
+                description: `Grand Charm + ${prefixEntry.inputLabel} -> ${prefixEntry.label} Charm`,
+                enabled: 1,
+                version: 100,
+                numinputs: 2,
+                'input 1': 'cm3',
+                'input 2': prefixEntry.input,
+                ilvl: 100,
+                output: `"cm3,mag,pre=${skillPrefixesFound[index]}"`,
+                'output b': prefixEntry.input,
+                '*eol\r': 0,
+            };
+            cubemain.rows.push(recipe);
+        }
+    }
+
+    addRecipeEntry('Grand Charm + Perfect Diamond/Skull -> Shimmering/Sharp');
+    for (const [key, value] of Object.entries(prefixesFound)) {
+        const prefixEntry = GCHARM_PREFIXES[key];
+        const recipe = {
+            description: `Grand Charm + ${prefixEntry.inputLabel} -> ${prefixEntry.label} Charm`,
+            enabled: 1,
+            version: 100,
+            numinputs: 2,
+            'input 1': 'cm3',
+            'input 2': prefixEntry.input,
+            ilvl: 100,
+            output: `"cm3,mag,pre=${value}`,
+            'output b': prefixEntry.input,
+            '*eol\r': 0,
+        };
+        cubemain.rows.push(recipe);
+    };
+
+    const suffixKeys = Object.keys(GCHARM_SUFFIXES);
+    const suffixesFound = {};
+    const magicsuffixFilename = 'global\\excel\\magicsuffix.txt';
+    const magicsuffix = D2RMM.readTsv(magicsuffixFilename);
+    rowNum = 0;
+    magicsuffix.rows.forEach((row) => {
+        if (row.level < 100 && row.itype1 == 'lcha' && suffixKeys.indexOf(row['Name']) !== -1)
+            suffixesFound[row['Name']] = rowNum;
+        rowNum++;
+    });
+    //D2RMM.writeTsv(magicsuffixFilename, magicsuffix);
+
+    console.warn(`Suffixes: ${Object.keys(suffixesFound)}`);
+
+    addRecipeEntry('GC + Health/Mana/Topaz/Stam/Anti -> Vita/Bal/Greed/Inert/Sub');
+    for (const [key, value] of Object.entries(suffixesFound)) {
+        const suffixEntry = GCHARM_SUFFIXES[key];
+        const recipe = {
+            description: `Grand Charm + ${suffixEntry.inputLabel} -> Charm of ${suffixEntry.label}`,
+            enabled: 1,
+            version: 100,
+            numinputs: 2,
+            'input 1': 'cm3',
+            'input 2': suffixEntry.input,
+            ilvl: 100,
+            output: `"cm3,mag,suf=${value}`,
+            'output b': suffixEntry.output,
+            '*eol\r': 0,
+        };
+        cubemain.rows.push(recipe);
+    };
+
+    for (let index = 0; index < GCHARM_SKILL_PREFIXES.length; index++) {
+        if (typeof skillPrefixesFound[index] == 'undefined') continue;
+        const prefixEntry = GCHARM_SKILL_PREFIXES[index];
+        const valuep = skillPrefixesFound[index];
+        Object.entries(suffixesFound).forEach(([keys, values]) => {
+            const suffixEntry = GCHARM_SUFFIXES[keys];
+            const recipe = {
+                description: `Grand Charm + ${prefixEntry.inputLabel} + ${suffixEntry.inputLabel} -> ${prefixEntry.label} Charm of ${suffixEntry.label}`,
+                enabled: 1,
+                version: 100,
+                numinputs: 3,
+                'input 1': 'cm3',
+                'input 2': prefixEntry.input,
+                'input 3': suffixEntry.input,
+                ilvl: 100,
+                output: `"cm3,mag,pre=${valuep},suf=${values}`,
+                'output b': prefixEntry.input,
+                'output c': suffixEntry.output,
+                '*eol\r': 0,
+            };
+            cubemain.rows.push(recipe);
+        });
+    };
+
+    Object.entries(prefixesFound).forEach(([keyp, valuep]) => {
+    Object.entries(suffixesFound).forEach(([keys, values]) => {
+        const prefixEntry = GCHARM_PREFIXES[keyp];
+        const suffixEntry = GCHARM_SUFFIXES[keys];
+        const recipe = {
+            description: `Grand Charm + ${prefixEntry.inputLabel} + ${suffixEntry.inputLabel} -> ${prefixEntry.label} Charm of ${suffixEntry.label}`,
+            enabled: 1,
+            version: 100,
+            numinputs: 3,
+            'input 1': 'cm3',
+            'input 2': prefixEntry.input,
+            'input 3': suffixEntry.input,
+            ilvl: 100,
+            output: `"cm3,mag,pre=${valuep},suf=${values}`,
+            'output b': prefixEntry.input,
+            'output c': suffixEntry.output,
             '*eol\r': 0,
         };
         cubemain.rows.push(recipe);
