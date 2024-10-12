@@ -12,6 +12,6 @@ https://www.nexusmods.com/diablo2resurrected/mods/72
 
 and
 
-park0n9's Korean Better Better Rune Visibility
+park0n9's Better Better Rune Visibility
 
 https://www.nexusmods.com/diablo2resurrected/mods/77
