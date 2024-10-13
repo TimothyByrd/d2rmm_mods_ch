@@ -469,7 +469,7 @@ if (config.jewelry) {
     addRecipeEntry('2 rare jewels -> magic jewel');
     AddJewelryRecipe('jew', 'rar', 'jew', 'mag');
 
-    addRecipeEntry('charm + Stamina -> next size charm');
+    addRecipeEntry('charm + Anti + Stamina -> next size charm');
     addRecipeEntry('2 charms -> charm');
     ['cm1', 'cm2', 'cm3'].forEach((itemType) => {
         const recipe1 = {
@@ -486,15 +486,17 @@ if (config.jewelry) {
 
         const nextSize = UPGRADE[itemType]
         const recipe2 = {
-            description: `${LABELS[itemType]} + Stamina Potion -> ${LABELS[nextSize]}`,
+            description: `${LABELS[itemType]} + Antidote Potion + Stamina Potion -> ${LABELS[nextSize]}`,
             enabled: 1,
             version: 100,
-            numinputs: 2,
+            numinputs: 3,
             'input 1': `"${itemType},mag"`,
-            'input 2': 'vps',
+            'input 2': 'yps',
+            'input 3': 'vps',
             lvl: 100,
             output: `"${nextSize},mag"`,
-            'output b': 'vps',
+            'output b': 'yps',
+            'output c': 'vps',
             '*eol\r': 0,
         };
         cubemain.rows.push(recipe2);
@@ -802,14 +804,14 @@ if (config.crazy) {
     const magicprefix = D2RMM.readTsv(magicprefixFilename);
     let rowNum = 0;
     magicprefix.rows.forEach((row) => {
-        if (row.itype1 == 'jewl' && prefixKeys.indexOf(row.mod1code) !== -1)
+        if (row.spawnable == '1' && row.itype1 == 'jewl' && prefixKeys.indexOf(row.mod1code) !== -1)
             prefixesFound[row.mod1code] = rowNum;
         rowNum++;
     });
     //D2RMM.writeTsv(magicprefixFilename, magicprefix);
 
     addRecipeEntry('Jewel + Perfect Gem -> Resist Jewel');
-    addRecipeEntry('ewel + Perfect Amethyst/Skull -> Damage Jewel');
+    addRecipeEntry('Jewel + Perfect Amethyst/Skull -> Damage Jewel');
     for (const [key, value] of Object.entries(prefixesFound)) {
         const prefixEntry = JEWEL_PREFIXES[key];
         const recipe = {
@@ -833,7 +835,7 @@ if (config.crazy) {
     const magicsuffix = D2RMM.readTsv(magicsuffixFilename);
     rowNum = 0;
     magicsuffix.rows.forEach((row) => {
-        if (row.itype1 == 'jewl' && suffixKeys.indexOf(row.mod1code) !== -1)
+        if (row.spawnable == '1' && row.itype1 == 'jewl' && suffixKeys.indexOf(row.mod1code) !== -1)
             suffixesFound[row.mod1code] = rowNum;
         rowNum++;
     });
@@ -912,12 +914,11 @@ const GCHARM_SKILL_PREFIXES = [
 
 const GCHARM_SUFFIXES = {
     'of Vita': { label: 'Vita', inputLabel: 'Health Potion', input: 'hpot', output: 'hp5' },
-    'of Balance': { label: 'Balance', inputLabel: 'Mana Potion', input: 'mpot', output: 'mp5' },
-    'of Greed': { label: 'Greed', inputLabel: 'Topaz', input: 'gsy', output: 'gsy' },
+    'of Substinence': { label: 'Sustenance', inputLabel: 'Mana Potion', input: 'mpot', output: 'mp5' },
+    'of Balance': { label: 'Balance', inputLabel: 'Thawing Potion', input: 'wms', output: 'wms' },
+    'of Greed': { label: 'Greed', inputLabel: 'Portal Scroll', input: 'tsc', output: 'tsc' },
     'of Inertia': { label: 'Inertia', inputLabel: 'Stamina Potion', input: 'vps', output: 'vps' },
-    'of Substinence': { label: 'Sustenance', inputLabel: 'Antidote Potion', input: 'yps', output: 'yps' },
 };
-
 
 if (config.crazy) {
     //addRecipeHeader('Experimental');
@@ -929,7 +930,11 @@ if (config.crazy) {
     const magicprefix = D2RMM.readTsv(magicprefixFilename);
     let rowNum = 0;
     magicprefix.rows.forEach((row) => {
-        if (row.itype1 == 'lcha' && prefixKeys.indexOf(row['Name']) !== -1)
+        if (row.spawnable !== '1')
+        {
+            // do nothing
+        }
+        else if (row.itype1 == 'lcha' && prefixKeys.indexOf(row['Name']) !== -1)
             prefixesFound[row['Name']] = rowNum;
         else if (row.itype1 == 'lcha' && row.mod1code == 'skilltab')
             skillPrefixesFound[row.mod1param] = rowNum;
@@ -984,7 +989,7 @@ if (config.crazy) {
     const magicsuffix = D2RMM.readTsv(magicsuffixFilename);
     rowNum = 0;
     magicsuffix.rows.forEach((row) => {
-        if (row.level < 100 && row.itype1 == 'lcha' && suffixKeys.indexOf(row['Name']) !== -1)
+        if (row.spawnable == '1' && row.level < 100 && row.itype1 == 'lcha' && suffixKeys.indexOf(row['Name']) !== -1)
             suffixesFound[row['Name']] = rowNum;
         rowNum++;
     });
@@ -992,7 +997,7 @@ if (config.crazy) {
 
     console.warn(`Suffixes: ${Object.keys(suffixesFound)}`);
 
-    addRecipeEntry('GC + Health/Mana/Topaz/Stam/Anti -> Vita/Bal/Greed/Inert/Sub');
+    addRecipeEntry('GC + Health/Mana/Thaw/Port/Stam -> Vita/Sub/Bal/Greed/Inert');
     for (const [key, value] of Object.entries(suffixesFound)) {
         const suffixEntry = GCHARM_SUFFIXES[key];
         const recipe = {
@@ -1048,6 +1053,116 @@ if (config.crazy) {
             'input 3': suffixEntry.input,
             ilvl: 100,
             output: `"cm3,mag,pre=${valuep},suf=${values}`,
+            'output b': prefixEntry.input,
+            'output c': suffixEntry.output,
+            '*eol\r': 0,
+        };
+        cubemain.rows.push(recipe);
+    });
+    });
+}
+
+const SCHARM_PREFIXES = {
+    'Shimmering':  { label: 'Shimmering', inputLabel: 'Perfect Diamond', input: 'gpw' },
+    'Sapphire': { label: 'Sapphire', inputLabel: 'Perfect Sapphire', input: 'gpb' },
+    'Ruby': { label: 'Ruby', inputLabel: 'Perfect Ruby', input: 'gpr' },
+    'Amber': { label: 'Amber', inputLabel: 'Perfect Topaz', input: 'gpy' },
+    'Emerald': { label: 'Emerald', inputLabel: 'Perfect Emerald', input: 'gpg' },
+    'Fine':  { label: 'Fine', inputLabel: 'Skull', input: 'sku' },
+    'Pestilent':  { label: 'Pestilent', inputLabel: 'Emerald', input: 'gsg' },
+    'Shocking':  { label: 'Shocking', inputLabel: 'Topaz', input: 'gsy' },
+    'Flaming':  { label: 'Flaming', inputLabel: 'Ruby', input: 'gsr' },
+    'Hibernal':  { label: 'Hibernal', inputLabel: 'Sapphire', input: 'gsb' },
+};
+
+const SCHARM_SUFFIXES = {
+    'of Vita': { label: 'Vita', inputLabel: 'Health Potion', input: 'hpot', output: 'hp5' },
+    'of Substinence': { label: 'Sustenance', inputLabel: 'Mana Potion', input: 'mpot', output: 'mp5' },
+    'of Balance': { label: 'Balance', inputLabel: 'Thawing Potion', input: 'wms', output: 'wms' },
+    'of Greed': { label: 'Greed', inputLabel: 'Portal Scroll', input: 'tsc', output: 'tsc' },
+    'of Inertia': { label: 'Inertia', inputLabel: 'Stamina Potion', input: 'vps', output: 'vps' },
+    'of Anthrax': { label: 'Anthrax', inputLabel: 'Antidote Potion', input: 'yps', output: 'yps' },
+    'of Good Luck': { label: 'Good Luck', inputLabel: 'Identify Scroll', input: 'isc', output: 'isc' },
+};
+
+if (config.crazy) {
+    //addRecipeHeader('Experimental');
+
+    const prefixKeys = Object.keys(SCHARM_PREFIXES);
+    const prefixesFound = {};
+    const magicprefixFilename = 'global\\excel\\magicprefix.txt';
+    const magicprefix = D2RMM.readTsv(magicprefixFilename);
+    let rowNum = 0;
+    magicprefix.rows.forEach((row) => {
+        if (row.spawnable == '1' && row.itype1 == 'scha' && prefixKeys.indexOf(row['Name']) !== -1)
+            prefixesFound[row['Name']] = rowNum;
+        rowNum++;
+    });
+    //D2RMM.writeTsv(magicprefixFilename, magicprefix);
+
+    addRecipeEntry('Small Charm + Perfect Gem -> Resist Charm');
+    addRecipeEntry('Small Charm + Standard Gem -> Damage Charm');
+    for (const [key, value] of Object.entries(prefixesFound)) {
+        const prefixEntry = SCHARM_PREFIXES[key];
+        const recipe = {
+            description: `Small Charm + ${prefixEntry.inputLabel} -> ${prefixEntry.label} Charm`,
+            enabled: 1,
+            version: 100,
+            numinputs: 2,
+            'input 1': 'cm1',
+            'input 2': prefixEntry.input,
+            ilvl: 100,
+            output: `"cm1,mag,pre=${value}`,
+            'output b': prefixEntry.input,
+            '*eol\r': 0,
+        };
+        cubemain.rows.push(recipe);
+    };
+
+    const suffixKeys = Object.keys(SCHARM_SUFFIXES);
+    const suffixesFound = {};
+    const magicsuffixFilename = 'global\\excel\\magicsuffix.txt';
+    const magicsuffix = D2RMM.readTsv(magicsuffixFilename);
+    rowNum = 0;
+    magicsuffix.rows.forEach((row) => {
+        if (row.spawnable == '1' && row.level < 100 && row.itype1 == 'scha' && suffixKeys.indexOf(row['Name']) !== -1)
+            suffixesFound[row['Name']] = rowNum;
+        rowNum++;
+    });
+    //D2RMM.writeTsv(magicsuffixFilename, magicsuffix);
+
+    addRecipeEntry('SC + Health/Mana/Thaw/Port/Stam/Anti/ID -> Vita/Sub/Bal/GF/MS/PD/MF');
+    for (const [key, value] of Object.entries(suffixesFound)) {
+        const suffixEntry = SCHARM_SUFFIXES[key];
+        const recipe = {
+            description: `Small Charm + ${suffixEntry.inputLabel} -> Charm of ${suffixEntry.label}`,
+            enabled: 1,
+            version: 100,
+            numinputs: 2,
+            'input 1': 'cm1',
+            'input 2': suffixEntry.input,
+            ilvl: 100,
+            output: `"cm1,mag,suf=${value}`,
+            'output b': suffixEntry.output,
+            '*eol\r': 0,
+        };
+        cubemain.rows.push(recipe);
+    };
+
+    Object.entries(prefixesFound).forEach(([keyp, valuep]) => {
+    Object.entries(suffixesFound).forEach(([keys, values]) => {
+        const prefixEntry = SCHARM_PREFIXES[keyp];
+        const suffixEntry = SCHARM_SUFFIXES[keys];
+        const recipe = {
+            description: `Small Charm + ${prefixEntry.inputLabel} + ${suffixEntry.inputLabel} -> ${prefixEntry.label} Charm of ${suffixEntry.label}`,
+            enabled: 1,
+            version: 100,
+            numinputs: 3,
+            'input 1': 'cm1',
+            'input 2': prefixEntry.input,
+            'input 3': suffixEntry.input,
+            ilvl: 100,
+            output: `"cm1,mag,pre=${valuep},suf=${values}`,
             'output b': prefixEntry.input,
             'output c': suffixEntry.output,
             '*eol\r': 0,
