@@ -2,6 +2,8 @@
 
 ## Cube crafting using potions for D2RMM
 
+Warning: Being able to to craft pretty much any equipment - runeword base, charm or unique - can take the fun out of the game.
+
 This mod adds recipes for more item crafting using the Horadric cube.
 We may not have Chaos Orbs, Orbs of Scouring and the like, but we do have... potions.
 
@@ -52,7 +54,7 @@ If __`Reroll jewelry`__ is enabled, then the following recipes are added:
 - 2 Magic jewels -> Rare jewel
 - 2 Rare jewels -> Magic jewel
 - 2 Charms -> Charm of same size
-- Charm + Stamina Portal -> next size of charme
+- Charm + Antidote Potion + Stamina Portal -> next size of charme
 - Amulet + Thawing Potion -> Jewel
 - Ring + Thawing Potion -> Small Charm
 
@@ -118,6 +120,262 @@ If __`Cycle between other potions/scrolls`__ is enabled, these recipes are added
 - Identify Scroll -> Portal Scroll
 - Portal Scroll -> Antidote Potion
 
+If __`Specific charms and jewels`__ is enabled, these recipes are added:
+
+- Jewel + Perfect Skull -> Max Damage Jewel
+- Jewel + Perfect Amethyst -> % Damage Jewel
+- Jewel + Perfect Diamond -> All Resistaances Jewel
+- Jewel + Perfect Sapphire -> Resist Cold Jewel
+- Jewel + Perfect Ruby -> Resist Fire Jewel
+- Jewel + Perfect Topaz -> Resist Lightning Jewel
+- Jewel + Perfect Emerald -> Resist Poison Jewel
+- Jewel + Stamina Potion -> Jewel of Attack Speed
+- Jewel + Thawing Potion -> Jewel of Lower Requirements
+- Jewel + Perfect Skull + Stamina Potion -> Max Damage Jewel of Attack Speed
+- Jewel + Perfect Skull + Thawing Potion -> Max Damage Jewel of Lower Requirements
+- Jewel + Perfect Amethyst + Stamina Potion -> % Damage Jewel of Attack Speed
+- Jewel + Perfect Amethyst + Thawing Potion -> % Damage Jewel of Lower Requirements
+- Jewel + Perfect Diamond + Stamina Potion -> All Resistaances Jewel of Attack Speed
+- Jewel + Perfect Diamond + Thawing Potion -> All Resistaances Jewel of Lower Requirements
+- Jewel + Perfect Sapphire + Stamina Potion -> Resist Cold Jewel of Attack Speed
+- Jewel + Perfect Sapphire + Thawing Potion -> Resist Cold Jewel of Lower Requirements
+- Jewel + Perfect Ruby + Stamina Potion -> Resist Fire Jewel of Attack Speed
+- Jewel + Perfect Ruby + Thawing Potion -> Resist Fire Jewel of Lower Requirements
+- Jewel + Perfect Topaz + Stamina Potion -> Resist Lightning Jewel of Attack Speed
+- Jewel + Perfect Topaz + Thawing Potion -> Resist Lightning Jewel of Lower Requirements
+- Jewel + Perfect Emerald + Stamina Potion -> Resist Poison Jewel of Attack Speed
+- Jewel + Perfect Emerald + Thawing Potion -> Resist Poison Jewel of Lower Requirements
+- Grand Charm + Chipped Topaz -> Fletcher's Charm
+- Grand Charm + Flawed Topaz -> Acrobat's Charm
+- Grand Charm + Flawless Topaz -> Harpoonist's Charm
+- Grand Charm + Chipped Sapphire -> Burning Charm
+- Grand Charm + Flawed Sapphire -> Sparking Charm
+- Grand Charm + Flawless Sapphire -> Chilling Charm
+- Grand Charm + Chipped Skull -> Hexing Charm
+- Grand Charm + Flawed Skull -> Fungal Charm
+- Grand Charm + Flawless Skull -> Graverobber's Charm
+- Grand Charm + Chipped Diamond -> Lion Branded Charm
+- Grand Charm + Flawed Diamond -> Captain's Charm
+- Grand Charm + Flawless Diamond -> Preserver's Charm
+- Grand Charm + Chipped Amethyst -> Expert's Charm
+- Grand Charm + Flawed Amethyst -> Fanatic Charm
+- Grand Charm + Flawless Amethyst -> Sounding Charm
+- Grand Charm + Chipped Ruby -> Trainer's Charm
+- Grand Charm + Flawed Ruby -> Spiritual Charm
+- Grand Charm + Flawless Ruby -> Nature's Charm
+- Grand Charm + Chipped Emerald -> Entrapping Charm
+- Grand Charm + Flawed Emerald -> Mentalist's Charm
+- Grand Charm + Flawless Emerald -> Shogukusha's Charm
+- Grand Charm + Perfect Skull -> Sharp Charm
+- Grand Charm + Perfect Diamond -> Shimmering Charm
+- Grand Charm + Thawing Potion -> Charm of Balance
+- Grand Charm + Portal Scroll -> Charm of Greed
+- Grand Charm + Mana Potion -> Charm of Sustenance
+- Grand Charm + Health Potion -> Charm of Vita
+- Grand Charm + Stamina Potion -> Charm of Inertia
+- Grand Charm + Chipped Topaz + Thawing Potion -> Fletcher's Charm of Balance
+- Grand Charm + Chipped Topaz + Portal Scroll -> Fletcher's Charm of Greed
+- Grand Charm + Chipped Topaz + Mana Potion -> Fletcher's Charm of Sustenance
+- Grand Charm + Chipped Topaz + Health Potion -> Fletcher's Charm of Vita
+- Grand Charm + Chipped Topaz + Stamina Potion -> Fletcher's Charm of Inertia
+- Grand Charm + Flawed Topaz + Thawing Potion -> Acrobat's Charm of Balance
+- Grand Charm + Flawed Topaz + Portal Scroll -> Acrobat's Charm of Greed
+- Grand Charm + Flawed Topaz + Mana Potion -> Acrobat's Charm of Sustenance
+- Grand Charm + Flawed Topaz + Health Potion -> Acrobat's Charm of Vita
+- Grand Charm + Flawed Topaz + Stamina Potion -> Acrobat's Charm of Inertia
+- Grand Charm + Flawless Topaz + Thawing Potion -> Harpoonist's Charm of Balance
+- Grand Charm + Flawless Topaz + Portal Scroll -> Harpoonist's Charm of Greed
+- Grand Charm + Flawless Topaz + Mana Potion -> Harpoonist's Charm of Sustenance
+- Grand Charm + Flawless Topaz + Health Potion -> Harpoonist's Charm of Vita
+- Grand Charm + Flawless Topaz + Stamina Potion -> Harpoonist's Charm of Inertia
+- Grand Charm + Chipped Sapphire + Thawing Potion -> Burning Charm of Balance
+- Grand Charm + Chipped Sapphire + Portal Scroll -> Burning Charm of Greed
+- Grand Charm + Chipped Sapphire + Mana Potion -> Burning Charm of Sustenance
+- Grand Charm + Chipped Sapphire + Health Potion -> Burning Charm of Vita
+- Grand Charm + Chipped Sapphire + Stamina Potion -> Burning Charm of Inertia
+- Grand Charm + Flawed Sapphire + Thawing Potion -> Sparking Charm of Balance
+- Grand Charm + Flawed Sapphire + Portal Scroll -> Sparking Charm of Greed
+- Grand Charm + Flawed Sapphire + Mana Potion -> Sparking Charm of Sustenance
+- Grand Charm + Flawed Sapphire + Health Potion -> Sparking Charm of Vita
+- Grand Charm + Flawed Sapphire + Stamina Potion -> Sparking Charm of Inertia
+- Grand Charm + Flawless Sapphire + Thawing Potion -> Chilling Charm of Balance
+- Grand Charm + Flawless Sapphire + Portal Scroll -> Chilling Charm of Greed
+- Grand Charm + Flawless Sapphire + Mana Potion -> Chilling Charm of Sustenance
+- Grand Charm + Flawless Sapphire + Health Potion -> Chilling Charm of Vita
+- Grand Charm + Flawless Sapphire + Stamina Potion -> Chilling Charm of Inertia
+- Grand Charm + Chipped Skull + Thawing Potion -> Hexing Charm of Balance
+- Grand Charm + Chipped Skull + Portal Scroll -> Hexing Charm of Greed
+- Grand Charm + Chipped Skull + Mana Potion -> Hexing Charm of Sustenance
+- Grand Charm + Chipped Skull + Health Potion -> Hexing Charm of Vita
+- Grand Charm + Chipped Skull + Stamina Potion -> Hexing Charm of Inertia
+- Grand Charm + Flawed Skull + Thawing Potion -> Fungal Charm of Balance
+- Grand Charm + Flawed Skull + Portal Scroll -> Fungal Charm of Greed
+- Grand Charm + Flawed Skull + Mana Potion -> Fungal Charm of Sustenance
+- Grand Charm + Flawed Skull + Health Potion -> Fungal Charm of Vita
+- Grand Charm + Flawed Skull + Stamina Potion -> Fungal Charm of Inertia
+- Grand Charm + Flawless Skull + Thawing Potion -> Graverobber's Charm of Balance
+- Grand Charm + Flawless Skull + Portal Scroll -> Graverobber's Charm of Greed
+- Grand Charm + Flawless Skull + Mana Potion -> Graverobber's Charm of Sustenance
+- Grand Charm + Flawless Skull + Health Potion -> Graverobber's Charm of Vita
+- Grand Charm + Flawless Skull + Stamina Potion -> Graverobber's Charm of Inertia
+- Grand Charm + Chipped Diamond + Thawing Potion -> Lion Branded Charm of Balance
+- Grand Charm + Chipped Diamond + Portal Scroll -> Lion Branded Charm of Greed
+- Grand Charm + Chipped Diamond + Mana Potion -> Lion Branded Charm of Sustenance
+- Grand Charm + Chipped Diamond + Health Potion -> Lion Branded Charm of Vita
+- Grand Charm + Chipped Diamond + Stamina Potion -> Lion Branded Charm of Inertia
+- Grand Charm + Flawed Diamond + Thawing Potion -> Captain's Charm of Balance
+- Grand Charm + Flawed Diamond + Portal Scroll -> Captain's Charm of Greed
+- Grand Charm + Flawed Diamond + Mana Potion -> Captain's Charm of Sustenance
+- Grand Charm + Flawed Diamond + Health Potion -> Captain's Charm of Vita
+- Grand Charm + Flawed Diamond + Stamina Potion -> Captain's Charm of Inertia
+- Grand Charm + Flawless Diamond + Thawing Potion -> Preserver's Charm of Balance
+- Grand Charm + Flawless Diamond + Portal Scroll -> Preserver's Charm of Greed
+- Grand Charm + Flawless Diamond + Mana Potion -> Preserver's Charm of Sustenance
+- Grand Charm + Flawless Diamond + Health Potion -> Preserver's Charm of Vita
+- Grand Charm + Flawless Diamond + Stamina Potion -> Preserver's Charm of Inertia
+- Grand Charm + Chipped Amethyst + Thawing Potion -> Expert's Charm of Balance
+- Grand Charm + Chipped Amethyst + Portal Scroll -> Expert's Charm of Greed
+- Grand Charm + Chipped Amethyst + Mana Potion -> Expert's Charm of Sustenance
+- Grand Charm + Chipped Amethyst + Health Potion -> Expert's Charm of Vita
+- Grand Charm + Chipped Amethyst + Stamina Potion -> Expert's Charm of Inertia
+- Grand Charm + Flawed Amethyst + Thawing Potion -> Fanatic Charm of Balance
+- Grand Charm + Flawed Amethyst + Portal Scroll -> Fanatic Charm of Greed
+- Grand Charm + Flawed Amethyst + Mana Potion -> Fanatic Charm of Sustenance
+- Grand Charm + Flawed Amethyst + Health Potion -> Fanatic Charm of Vita
+- Grand Charm + Flawed Amethyst + Stamina Potion -> Fanatic Charm of Inertia
+- Grand Charm + Flawless Amethyst + Thawing Potion -> Sounding Charm of Balance
+- Grand Charm + Flawless Amethyst + Portal Scroll -> Sounding Charm of Greed
+- Grand Charm + Flawless Amethyst + Mana Potion -> Sounding Charm of Sustenance
+- Grand Charm + Flawless Amethyst + Health Potion -> Sounding Charm of Vita
+- Grand Charm + Flawless Amethyst + Stamina Potion -> Sounding Charm of Inertia
+- Grand Charm + Chipped Ruby + Thawing Potion -> Trainer's Charm of Balance
+- Grand Charm + Chipped Ruby + Portal Scroll -> Trainer's Charm of Greed
+- Grand Charm + Chipped Ruby + Mana Potion -> Trainer's Charm of Sustenance
+- Grand Charm + Chipped Ruby + Health Potion -> Trainer's Charm of Vita
+- Grand Charm + Chipped Ruby + Stamina Potion -> Trainer's Charm of Inertia
+- Grand Charm + Flawed Ruby + Thawing Potion -> Spiritual Charm of Balance
+- Grand Charm + Flawed Ruby + Portal Scroll -> Spiritual Charm of Greed
+- Grand Charm + Flawed Ruby + Mana Potion -> Spiritual Charm of Sustenance
+- Grand Charm + Flawed Ruby + Health Potion -> Spiritual Charm of Vita
+- Grand Charm + Flawed Ruby + Stamina Potion -> Spiritual Charm of Inertia
+- Grand Charm + Flawless Ruby + Thawing Potion -> Nature's Charm of Balance
+- Grand Charm + Flawless Ruby + Portal Scroll -> Nature's Charm of Greed
+- Grand Charm + Flawless Ruby + Mana Potion -> Nature's Charm of Sustenance
+- Grand Charm + Flawless Ruby + Health Potion -> Nature's Charm of Vita
+- Grand Charm + Flawless Ruby + Stamina Potion -> Nature's Charm of Inertia
+- Grand Charm + Chipped Emerald + Thawing Potion -> Entrapping Charm of Balance
+- Grand Charm + Chipped Emerald + Portal Scroll -> Entrapping Charm of Greed
+- Grand Charm + Chipped Emerald + Mana Potion -> Entrapping Charm of Sustenance
+- Grand Charm + Chipped Emerald + Health Potion -> Entrapping Charm of Vita
+- Grand Charm + Chipped Emerald + Stamina Potion -> Entrapping Charm of Inertia
+- Grand Charm + Flawed Emerald + Thawing Potion -> Mentalist's Charm of Balance
+- Grand Charm + Flawed Emerald + Portal Scroll -> Mentalist's Charm of Greed
+- Grand Charm + Flawed Emerald + Mana Potion -> Mentalist's Charm of Sustenance
+- Grand Charm + Flawed Emerald + Health Potion -> Mentalist's Charm of Vita
+- Grand Charm + Flawed Emerald + Stamina Potion -> Mentalist's Charm of Inertia
+- Grand Charm + Flawless Emerald + Thawing Potion -> Shogukusha's Charm of Balance
+- Grand Charm + Flawless Emerald + Portal Scroll -> Shogukusha's Charm of Greed
+- Grand Charm + Flawless Emerald + Mana Potion -> Shogukusha's Charm of Sustenance
+- Grand Charm + Flawless Emerald + Health Potion -> Shogukusha's Charm of Vita
+- Grand Charm + Flawless Emerald + Stamina Potion -> Shogukusha's Charm of Inertia
+- Grand Charm + Perfect Skull + Thawing Potion -> Sharp Charm of Balance
+- Grand Charm + Perfect Skull + Portal Scroll -> Sharp Charm of Greed
+- Grand Charm + Perfect Skull + Mana Potion -> Sharp Charm of Sustenance
+- Grand Charm + Perfect Skull + Health Potion -> Sharp Charm of Vita
+- Grand Charm + Perfect Skull + Stamina Potion -> Sharp Charm of Inertia
+- Grand Charm + Perfect Diamond + Thawing Potion -> Shimmering Charm of Balance
+- Grand Charm + Perfect Diamond + Portal Scroll -> Shimmering Charm of Greed
+- Grand Charm + Perfect Diamond + Mana Potion -> Shimmering Charm of Sustenance
+- Grand Charm + Perfect Diamond + Health Potion -> Shimmering Charm of Vita
+- Grand Charm + Perfect Diamond + Stamina Potion -> Shimmering Charm of Inertia
+- Small Charm + Skull -> Fine Charm
+- Small Charm + Perfect Diamond -> Shimmering Charm
+- Small Charm + Perfect Sapphire -> Sapphire Charm
+- Small Charm + Perfect Ruby -> Ruby Charm
+- Small Charm + Perfect Topaz -> Amber Charm
+- Small Charm + Perfect Emerald -> Emerald Charm
+- Small Charm + Sapphire -> Hibernal Charm
+- Small Charm + Ruby -> Flaming Charm
+- Small Charm + Topaz -> Shocking Charm
+- Small Charm + Emerald -> Pestilent Charm
+- Small Charm + Thawing Potion -> Charm of Balance
+- Small Charm + Portal Scroll -> Charm of Greed
+- Small Charm + Identify Scroll -> Charm of Good Luck
+- Small Charm + Mana Potion -> Charm of Sustenance
+- Small Charm + Health Potion -> Charm of Vita
+- Small Charm + Stamina Potion -> Charm of Inertia
+- Small Charm + Antidote Potion -> Charm of Anthrax
+- Small Charm + Skull + Thawing Potion -> Fine Charm of Balance
+- Small Charm + Skull + Portal Scroll -> Fine Charm of Greed
+- Small Charm + Skull + Identify Scroll -> Fine Charm of Good Luck
+- Small Charm + Skull + Mana Potion -> Fine Charm of Sustenance
+- Small Charm + Skull + Health Potion -> Fine Charm of Vita
+- Small Charm + Skull + Stamina Potion -> Fine Charm of Inertia
+- Small Charm + Skull + Antidote Potion -> Fine Charm of Anthrax
+- Small Charm + Perfect Diamond + Thawing Potion -> Shimmering Charm of Balance
+- Small Charm + Perfect Diamond + Portal Scroll -> Shimmering Charm of Greed
+- Small Charm + Perfect Diamond + Identify Scroll -> Shimmering Charm of Good Luck
+- Small Charm + Perfect Diamond + Mana Potion -> Shimmering Charm of Sustenance
+- Small Charm + Perfect Diamond + Health Potion -> Shimmering Charm of Vita
+- Small Charm + Perfect Diamond + Stamina Potion -> Shimmering Charm of Inertia
+- Small Charm + Perfect Diamond + Antidote Potion -> Shimmering Charm of Anthrax
+- Small Charm + Perfect Sapphire + Thawing Potion -> Sapphire Charm of Balance
+- Small Charm + Perfect Sapphire + Portal Scroll -> Sapphire Charm of Greed
+- Small Charm + Perfect Sapphire + Identify Scroll -> Sapphire Charm of Good Luck
+- Small Charm + Perfect Sapphire + Mana Potion -> Sapphire Charm of Sustenance
+- Small Charm + Perfect Sapphire + Health Potion -> Sapphire Charm of Vita
+- Small Charm + Perfect Sapphire + Stamina Potion -> Sapphire Charm of Inertia
+- Small Charm + Perfect Sapphire + Antidote Potion -> Sapphire Charm of Anthrax
+- Small Charm + Perfect Ruby + Thawing Potion -> Ruby Charm of Balance
+- Small Charm + Perfect Ruby + Portal Scroll -> Ruby Charm of Greed
+- Small Charm + Perfect Ruby + Identify Scroll -> Ruby Charm of Good Luck
+- Small Charm + Perfect Ruby + Mana Potion -> Ruby Charm of Sustenance
+- Small Charm + Perfect Ruby + Health Potion -> Ruby Charm of Vita
+- Small Charm + Perfect Ruby + Stamina Potion -> Ruby Charm of Inertia
+- Small Charm + Perfect Ruby + Antidote Potion -> Ruby Charm of Anthrax
+- Small Charm + Perfect Topaz + Thawing Potion -> Amber Charm of Balance
+- Small Charm + Perfect Topaz + Portal Scroll -> Amber Charm of Greed
+- Small Charm + Perfect Topaz + Identify Scroll -> Amber Charm of Good Luck
+- Small Charm + Perfect Topaz + Mana Potion -> Amber Charm of Sustenance
+- Small Charm + Perfect Topaz + Health Potion -> Amber Charm of Vita
+- Small Charm + Perfect Topaz + Stamina Potion -> Amber Charm of Inertia
+- Small Charm + Perfect Topaz + Antidote Potion -> Amber Charm of Anthrax
+- Small Charm + Perfect Emerald + Thawing Potion -> Emerald Charm of Balance
+- Small Charm + Perfect Emerald + Portal Scroll -> Emerald Charm of Greed
+- Small Charm + Perfect Emerald + Identify Scroll -> Emerald Charm of Good Luck
+- Small Charm + Perfect Emerald + Mana Potion -> Emerald Charm of Sustenance
+- Small Charm + Perfect Emerald + Health Potion -> Emerald Charm of Vita
+- Small Charm + Perfect Emerald + Stamina Potion -> Emerald Charm of Inertia
+- Small Charm + Perfect Emerald + Antidote Potion -> Emerald Charm of Anthrax
+- Small Charm + Sapphire + Thawing Potion -> Hibernal Charm of Balance
+- Small Charm + Sapphire + Portal Scroll -> Hibernal Charm of Greed
+- Small Charm + Sapphire + Identify Scroll -> Hibernal Charm of Good Luck
+- Small Charm + Sapphire + Mana Potion -> Hibernal Charm of Sustenance
+- Small Charm + Sapphire + Health Potion -> Hibernal Charm of Vita
+- Small Charm + Sapphire + Stamina Potion -> Hibernal Charm of Inertia
+- Small Charm + Sapphire + Antidote Potion -> Hibernal Charm of Anthrax
+- Small Charm + Ruby + Thawing Potion -> Flaming Charm of Balance
+- Small Charm + Ruby + Portal Scroll -> Flaming Charm of Greed
+- Small Charm + Ruby + Identify Scroll -> Flaming Charm of Good Luck
+- Small Charm + Ruby + Mana Potion -> Flaming Charm of Sustenance
+- Small Charm + Ruby + Health Potion -> Flaming Charm of Vita
+- Small Charm + Ruby + Stamina Potion -> Flaming Charm of Inertia
+- Small Charm + Ruby + Antidote Potion -> Flaming Charm of Anthrax
+- Small Charm + Topaz + Thawing Potion -> Shocking Charm of Balance
+- Small Charm + Topaz + Portal Scroll -> Shocking Charm of Greed
+- Small Charm + Topaz + Identify Scroll -> Shocking Charm of Good Luck
+- Small Charm + Topaz + Mana Potion -> Shocking Charm of Sustenance
+- Small Charm + Topaz + Health Potion -> Shocking Charm of Vita
+- Small Charm + Topaz + Stamina Potion -> Shocking Charm of Inertia
+- Small Charm + Topaz + Antidote Potion -> Shocking Charm of Anthrax
+- Small Charm + Emerald + Thawing Potion -> Pestilent Charm of Balance
+- Small Charm + Emerald + Portal Scroll -> Pestilent Charm of Greed
+- Small Charm + Emerald + Identify Scroll -> Pestilent Charm of Good Luck
+- Small Charm + Emerald + Mana Potion -> Pestilent Charm of Sustenance
+- Small Charm + Emerald + Health Potion -> Pestilent Charm of Vita
+- Small Charm + Emerald + Stamina Potion -> Pestilent Charm of Inertia
+- Small Charm + Emerald + Antidote Potion -> Pestilent Charm of Anthrax
+
 The __`Update recipes panel`__ setting is for when the "Breakpoint and Recipe UI Panels" mod is installed.
 It updates the recipe panel to include the new recipes added by this mod.
 The "Breakpoint and Recipe UI Panels" mod must install before this mod for recipes to be added to UI Panel.
@@ -136,3 +394,4 @@ This code is from olegbl's [Horadric Forging mod](https://www.nexusmods.com/diab
 - 1.3 Include added recipes in recipe panel if "Breakpoint and Recipe UI Panels" mod is installed
 - 1.4 Rearrange some recipes. Add recipes to generate charms and jewels, since they cannot be gambled.
 - 1.4.1 Fix high-level recipe
+- 1.5.0 Add recipes for specific charms/jewels

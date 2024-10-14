@@ -34,6 +34,13 @@
         "defaultValue": true
     },
     {
+        "id": "specific",
+        "type": "checkbox",
+        "name": "Specific charms and jewels",
+        "description": "Recipes to make specific charms and jewels.",
+        "defaultValue": false
+    },
+    {
         "id": "socketing",
         "type": "checkbox",
         "name": "Toggle sockets",
@@ -100,13 +107,6 @@
         "name": "Fix unique items for crafting",
         "description": "Allow unique items to drop more than once per game and lower some item levels.",
         "defaultValue": true
-    },
-    {
-        "id": "crazy",
-        "type": "checkbox",
-        "name": "Crazy recipes",
-        "description": "Experimental stuff.",
-        "defaultValue": false
     }
   ]
 }

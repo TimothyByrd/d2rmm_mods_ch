@@ -795,8 +795,8 @@ const JEWEL_SUFFIXES = {
     'ease': { label: 'Lower Requirements', inputLabel: 'Thawing Potion', input: 'wms' },
 };
 
-if (config.crazy) {
-    addRecipeHeader('Experimental');
+if (config.specific) {
+    addRecipeHeader('Specific charms/jewels');
 
     const prefixKeys = Object.keys(JEWEL_PREFIXES);
     const prefixesFound = {};
@@ -920,7 +920,7 @@ const GCHARM_SUFFIXES = {
     'of Inertia': { label: 'Inertia', inputLabel: 'Stamina Potion', input: 'vps', output: 'vps' },
 };
 
-if (config.crazy) {
+if (config.specific) {
     //addRecipeHeader('Experimental');
 
     const prefixKeys = Object.keys(GCHARM_PREFIXES);
@@ -995,7 +995,7 @@ if (config.crazy) {
     });
     //D2RMM.writeTsv(magicsuffixFilename, magicsuffix);
 
-    console.warn(`Suffixes: ${Object.keys(suffixesFound)}`);
+    //console.warn(`Suffixes: ${Object.keys(suffixesFound)}`);
 
     addRecipeEntry('GC + Health/Mana/Thaw/Port/Stam -> Vita/Sub/Bal/Greed/Inert');
     for (const [key, value] of Object.entries(suffixesFound)) {
@@ -1085,7 +1085,7 @@ const SCHARM_SUFFIXES = {
     'of Good Luck': { label: 'Good Luck', inputLabel: 'Identify Scroll', input: 'isc', output: 'isc' },
 };
 
-if (config.crazy) {
+if (config.specific) {
     //addRecipeHeader('Experimental');
 
     const prefixKeys = Object.keys(SCHARM_PREFIXES);

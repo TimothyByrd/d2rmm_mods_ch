@@ -16,6 +16,8 @@ This mod makes class-specific items available for gambling.
 ## [PotionCrafting_CH](https://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/PotionCrafting_CH)
 This mod adds recipes for more item crafting using the Horadric cube, using... potions.
 
+Almost any equipment - runeword base, charm or unique - can be made.
+
 [Nexus Mods page](https://www.nexusmods.com/diablo2resurrected/mods/549)
 
 ## [RuneAndGemSplitting_CH](https://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/RuneAndGemSplitting_CH)
