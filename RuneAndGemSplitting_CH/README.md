@@ -2,7 +2,7 @@
 
 ## Rune and Gem Splitting for D2RMM
 
-This mod adds recipes for upgrading and splitting runes and gems.
+This mod adds recipes for upgrading and splitting runes and gems, also for converting between gem types.
 
 Upgrade 2 lower to 1 higher. Split 1 higher to 2 lower.
 Can make the split recipes also require a thawing potion for compatibility with StackableRunes and StackableGems mods.

@@ -21,7 +21,7 @@ Almost any equipment - runeword base, charm or unique - can be made.
 [Nexus Mods page](https://www.nexusmods.com/diablo2resurrected/mods/549)
 
 ## [RuneAndGemSplitting_CH](https://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/RuneAndGemSplitting_CH)
-This mod adds recipes for upgrading and splitting runes and gems.
+This mod adds recipes for upgrading and splitting runes and gems, also for converting between gem types.
 
 [Nexus Mods page](https://www.nexusmods.com/diablo2resurrected/mods/550)
 
