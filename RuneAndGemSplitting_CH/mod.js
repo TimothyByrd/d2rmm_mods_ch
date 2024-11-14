@@ -94,6 +94,30 @@ if (config.runeSplitting) {
     }
 }
 
+if (config.runeConversion) {
+    for (let tier = 1; tier <= 33; tier++) {
+        const nextTier = (tier % 33) + 1;
+        const lowerRune = 'r' + tier.toString().padStart(2, '0');
+        const upperRune = 'r' + (nextTier).toString().padStart(2, '0');
+        const lowerName = RUNE_NAMES[lowerRune];
+        const upperName = RUNE_NAMES[upperRune];
+        const recipe = {
+            description: `${lowerName} Rune + Antidote Potion + Stamina Potion -> ${upperName} Rune`,
+            enabled: 1,
+            version: 100,
+            numinputs: 3,
+            'input 1': lowerRune,
+            'input 2': 'yps',
+            'input 3': 'vps',
+            output: upperRune,
+            'output b': 'yps',
+            'output c': 'vps',
+            '*eol\r': 0,
+        };
+        cubemain.rows.push(recipe);
+    }
+}
+
 const GEM_LEVELS = [
     'Chipped',
     'Flawed',

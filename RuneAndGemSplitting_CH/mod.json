@@ -3,7 +3,7 @@
   "description": "Simplifies rune and gem upgrade recipes. Add recipes to split runes and gems.",
   "author": "CelticHound",
   "website": "https://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/RuneAndGemSplitting_CH",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "config": [
      {
       "id": "twoRuneUpgrades",
@@ -18,6 +18,13 @@
       "name": "Rune Splitting",
       "description": "Adds recipes for a single rune to split into two lower runes.",
       "defaultValue": true
+    },
+    {
+        "id": "runeConversion",
+        "type": "checkbox",
+        "name": "Rune Conversion for vladimir77777777",
+        "description": "Adds recipes for a single rune + antidote + stamina to convert to next rune.",
+        "defaultValue": false
     },
     {
       "id": "twoGemUpgrades",
