@@ -421,7 +421,7 @@ To craft a giant thresher for infinity for your mercenary use these steps:
 1. Go to Gheed and buy or gamble a War Scythe.
 2. If the item is magic or rare, use the Item + Stamina + Antidote recipe to transmute it to normal.
 3. Use the Item + Antidote + Identify recipe to upgrade to a Grim Scythe and then to a Giant Thresher.
-4. Use the Item + Stamina + Identify + Full Rejuve recipe to upgrade the item to ilvl 99 and to set the level requirement back to the normal value (66 for a Giant Thresher).
+4. Use the Item + Stamina + Identify + Full Rejuv recipe to upgrade the item to ilvl 99 and to set the level requirement back to the normal value (66 for a Giant Thresher).
 5. If you want a superior item, use the Item + Antidote + Stamina recipe to make is superior. Then use the Item + Stamina recipe until you have a superior affix of +15% Enhanced Damage and no sockets.
 6. Socket the item: for Infinity, we want 4 sockets, so the recipe is item + Stamina Potion + (Standard) Health Potion. Here are the possible recipes:
     - 2 sockets: Item + Stamina Potion + Minor Health Potion
