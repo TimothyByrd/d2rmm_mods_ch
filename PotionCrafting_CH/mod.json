@@ -3,7 +3,7 @@
     "description": "Craft items using potions",
     "author": "CelticHound",
     "website": "https://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/PotionCrafting_CH",
-    "version": "1.5.0",
+    "version": "1.6.0",
     "config": [
     {
         "id": "toNormal",
@@ -66,6 +66,13 @@
         "type": "checkbox",
         "name": "Upgrade Health and Mana potions",
         "description": "Upgrade two Health or Mana potions to one of the next tier.",
+        "defaultValue": true
+    },
+    {
+        "id": "potionSplitting",
+        "type": "checkbox",
+        "name": "Split Health and Mana potions",
+        "description": "Use a Thawing Potion to split Health or Mana potion to two of the previous tier.",
         "defaultValue": true
     },
     {

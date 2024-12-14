@@ -666,7 +666,7 @@ if (config.removeItems) {
     });
 }
 
-if (config.potionUpgrades || config.healthManaConversion || config.easyRejuvinationRecipe || config.cycleThroughOtherItems) {
+if (config.potionUpgrades || config.potionSplitting || config.healthManaConversion || config.easyRejuvinationRecipe || config.cycleThroughOtherItems) {
     addRecipeHeader('Potions');
 }
 
@@ -685,6 +685,30 @@ if (config.potionUpgrades) {
                 numinputs: 2,
                 'input 1': `"${lowerPotion},qty=2"`, // '"' + lowerPotion + ',qty=2"',
                 output: upperPotion,
+                '*eol\r': 0,
+            };
+            cubemain.rows.push(recipe);
+        }
+    }
+}
+
+if (config.potionSplitting) {
+    addRecipeEntry('Health/Mana + Thawing -> 2 of previous tier');
+    for (const [potionType, tiers] of Object.entries(POTION_TYPES)) {
+        for (let tier = 0; tier <= 3; tier++) {
+            const lowerPotion = tiers[tier];
+            const upperPotion = tiers[tier + 1];
+            const lowerLevel = POTION_LEVELS[tier];
+            const upperLevel = POTION_LEVELS[tier + 1];
+            const recipe = {
+                description: `${upperLevel} ${potionType} + Thawing Potion -> 2 ${lowerLevel} ${potionType}`,
+                enabled: 1,
+                version: 100,
+                numinputs: 2,
+                'input 1': upperPotion,
+                'input 2': 'wms',
+                output: lowerPotion,
+                'output b': lowerPotion,
                 '*eol\r': 0,
             };
             cubemain.rows.push(recipe);

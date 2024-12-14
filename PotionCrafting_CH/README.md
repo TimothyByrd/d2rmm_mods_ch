@@ -1,8 +1,19 @@
 # PotionCrafting_CH
 
-## Cube crafting using potions for D2RMM
+#### Table of contents
 
-Warning: Being able to to craft pretty much any equipment - runeword base, charm or unique - can take the fun out of the game.
+[Cube crafting using potions for D2RMM](#h01)<br>
+[Rerolling items](#h02)<br>
+[Socketing](#h03)<br>
+[Potions](#h04)<br>
+[Example: Crafting a Giant Thresher for Infinity](#h05)<br>
+[Version history](#h06)<br>
+
+
+## Cube crafting using potions for D2RMM
+<a name="h01" />
+
+**Warning: Being able to to craft pretty much any equipment - runeword base, charm or unique - can take the fun out of the game.**
 
 This mod adds recipes for more item crafting using the Horadric cube.
 We may not have Chaos Orbs, Orbs of Scouring and the like, but we do have... potions.
@@ -20,6 +31,7 @@ There are also recipes for upgrading and converting potions, which could really 
 Note that the "Breakpoint and Recipe UI Panels" mod must install before this mod for recipes to be added to UI Panel.
 
 ## Rerolling items
+<a name="h02" />
 
 If __`Convert to normal item`__ is enabled, then recipes are added to convert Unique/Set/Rare/Magic/Superior items to Normal items,
 or Low Quality -> Normal -> Superior.
@@ -59,6 +71,7 @@ If __`Reroll jewelry`__ is enabled, then the following recipes are added:
 - Ring + Thawing Potion -> Small Charm
 
 ## Socketing
+<a name="h03" />
 
 If __`Toggle sockets`__ is enabled, then recipes are added to toggle sockets in normal and superior items.
 This will reroll the item.
@@ -82,6 +95,7 @@ recovering both the item and the socket fillers.
 Since a 2x4 weapon may have up to 6 sockets, unsocketing such an item will require an Expanded Cube mod to have enough space.
 
 ## Potions
+<a name="h04" />
 
 If __`Upgrade Health and Mana potions`__ is enabled, these recipes are added:
 
@@ -93,6 +107,17 @@ If __`Upgrade Health and Mana potions`__ is enabled, these recipes are added:
 - 2 Light Mana -> Standard Mana
 - 2 Standard Mana -> Greater Mana
 - 2 Greater Mana -> Super Mana
+
+If __`Split Health and Mana potions`__ is enabled, these recipes are added:
+
+- Light Health + Thawing -> 2 Minor Health
+- Standard Health + Thawing -> 2 Light Health
+- Greater Health + Thawing -> 2 Standard Health
+- Super Health + Thawing -> 2 Greater Health
+- Light Mana + Thawing -> 2 Minor Mana
+- Standard Mana + Thawing -> 2 Light Mana
+- Greater Mana + Thawing -> 2 Standard Mana
+- Super Mana + Thawing -> 2 Greater Mana
 
 If __`Convert between Health and Mana potions`__ is enabled, these recipes are added:
 
@@ -386,12 +411,35 @@ Also uniques with a required area level of over 99 (Torch, Annihilus) have that 
 This allows them to be rerolled (otherwise, they consider the character to not be high level enough for the recipe).
 This code is from olegbl's [Horadric Forging mod](https://www.nexusmods.com/diablo2resurrected/mods/229).
 
-## Versions
+## Example: Crafting a Giant Thresher for Infinity
+<a name="h05" />
+
+**Warning: Being able to to craft pretty much any equipment - runeword base, charm or unique - can take the fun out of the game.**
+
+To craft a giant thresher for infinity for your mercenary use these steps:
+
+1. Go to Gheed and buy or gamble a War Scythe.
+2. If the item is magic or rare, use the Item + Stamina + Antidote recipe to transmute it to normal.
+3. Use the Item + Antidote + Identify recipe to upgrade to a Grim Scythe and then to a Giant Thresher.
+4. Use the Item + Stamina + Identify + Full Rejuve recipe to upgrade the item to ilvl 99 and to set the level requirement back to the normal value (66 for a Giant Thresher).
+5. If you want a superior item, use the Item + Antidote + Stamina recipe to make is superior. Then use the Item + Stamina recipe until you have a superior affix of +15% Enhanced Damage and no sockets.
+6. Socket the item: for Infinity, we want 4 sockets, so the recipe is item + Stamina Potion + (Standard) Health Potion. Here are the possible recipes:
+    - 2 sockets: Item + Stamina Potion + Minor Health Potion
+    - 3 sockets: Item + Stamina Potion + Light Health Potion
+    - 4 sockets: Item + Stamina Potion + (Standard) Health Potion
+    - 5 sockets: Item + Stamina Potion + Greater Health Potion
+    - 6 sockets: Item + Stamina Potion + Super Health Potion
+    - To get a Standard Health Potion, use the Health + Thawing recipe to split down from a Super Health potion.
+7. If you want the item to be Ethereal, use the item + Antidote Potion + Stamina Potion + Thawing Potion recipe.
+
+## Version history
+<a name="h06" />
 
 - 1.0 Initial version
 - 1.1 Fix bug removing sockets from items
 - 1.2 Add reroll as Magic/Rare recipes
 - 1.3 Include added recipes in recipe panel if "Breakpoint and Recipe UI Panels" mod is installed
-- 1.4 Rearrange some recipes. Add recipes to generate charms and jewels, since they cannot be gambled.
+- 1.4 Rearrange some recipes. Add recipes to generate charms and jewels, since they cannot be gambled
 - 1.4.1 Fix high-level recipe
 - 1.5.0 Add recipes for specific charms/jewels
+- 1.6.0 Add potion splitting recipes and add crafting examples to the README
