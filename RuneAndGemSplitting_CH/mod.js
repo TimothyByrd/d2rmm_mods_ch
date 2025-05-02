@@ -56,7 +56,7 @@ function FixRuneUpgradeRecipe(tier, numInputs) {
             const upperName = RUNE_NAMES[upperRune];
             row.description = `${numInputs} ${lowerName} Runes -> ${upperName} Rune`;
             row.numinputs = numInputs;
-            row['input 1'] = '"' + lowerRune + ',qty='+ numInputs + '"';
+            row['input 1'] = `"${lowerRune},qty=${numInputs}"`;
             row['input 2'] = '';
             return;
         }
@@ -154,7 +154,7 @@ function FixGemUpgradeRecipe(gemType, tier) {
             const upperLevel = GEM_LEVELS[tier + 1];
             row.description = `2 ${lowerLevel} -> ${upperLevel} ${gemType}`;
             row.numinputs = 2;
-            row['input 1'] = '"' + lowerGem + ',qty=2"';
+            row['input 1'] = `"${lowerGem},qty=2"`;
             return;
         }
     });
@@ -233,7 +233,7 @@ if (config.gemConversion == 'chipped') {
                 enabled: 1,
                 version: 100,
                 numinputs: 3,
-                'input 1': '"gem' + tier + ',2"',
+                'input 1': `"gem${tier},2"`,
                 'input 2': outputTiers[0],
                 output: outputTiers[tier],
                 '*eol\r': 0,

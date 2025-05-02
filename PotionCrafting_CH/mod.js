@@ -478,7 +478,7 @@ if (config.jewelry) {
             version: 100,
             numinputs: 2,
             'input 1': `"${itemType},mag,qty=2"`,
-            ilvl: 100,
+            plvl: 100,
             output: `"${itemType},mag"`,
             '*eol\r': 0,
         };
@@ -512,7 +512,7 @@ if (config.jewelry) {
             'input 1': `"amu,${itemQuality}"`,
             'input 2': 'wms',
             ilvl: 100,
-            output: '"jew,${itemQuality}"',
+            output: `"jew,${itemQuality}"`,
             'output b': 'vps',
             '*eol\r': 0,
         };
@@ -607,10 +607,6 @@ if (config.socketing) {
                     'input 2': 'vps',
                     'input 3': potion,
                     output: `"useitem,${qualityLevel},sock=${sockets}"`,
-//                     output: `"useitem,${qualityLevel}"`,
-//                     'mod 1': 'sock',
-//                     'mod 1 min': tier + 1,
-//                     'mod 1 max': tier + 1,
                     'output b': 'vps',
                     'output c': potion,
                     ilvl: 100,
@@ -658,7 +654,7 @@ if (config.removeItems) {
             numinputs: 2,
             'input 1': `"${itemType},sock"`,
             'input 2': 'wms',
-            output: 'useitem,rem',
+            output: '"useitem,rem"',
             ilvl: 100,
             '*eol\r': 0,
         };
@@ -683,7 +679,7 @@ if (config.potionUpgrades) {
                 enabled: 1,
                 version: 100,
                 numinputs: 2,
-                'input 1': `"${lowerPotion},qty=2"`, // '"' + lowerPotion + ',qty=2"',
+                'input 1': `"${lowerPotion},qty=2"`,
                 output: upperPotion,
                 '*eol\r': 0,
             };
