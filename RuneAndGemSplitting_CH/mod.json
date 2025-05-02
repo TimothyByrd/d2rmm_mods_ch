@@ -3,14 +3,19 @@
   "description": "Simplifies rune and gem upgrade recipes. Add recipes to split runes and gems.",
   "author": "CelticHound",
   "website": "https://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/RuneAndGemSplitting_CH",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "config": [
-     {
-      "id": "twoRuneUpgrades",
-      "type": "checkbox",
-      "name": "2-Rune Upgrades",
-      "description": "Modifies the rune upgrade recipes to require two of the lower rune and no gems.",
-      "defaultValue": true
+    {
+      "id": "runeUpgrades",
+      "type": "select",
+      "name": "Update rune upgrade recipes",
+      "description": "Modifies the rune upgrade recipes.",
+      "defaultValue": "disabled",
+      "options": [
+          { "value": "disabled", "label": "Do not modify the rune upgrade recipes" },
+          { "value": "two", "label": "Require two lower runes and no gems" },
+          { "value": "noGems", "label": "Require no gems" }
+      ]
     },
     {
       "id": "runeSplitting",
@@ -31,7 +36,7 @@
       "type": "checkbox",
       "name": "2-Gem Upgrades",
       "description": "Modifies the gem upgrade recipes to require two of the lower gem.",
-      "defaultValue": true
+      "defaultValue": false
     },
     {
       "id": "gemSplitting",
@@ -41,11 +46,16 @@
       "defaultValue": true
     },
     {
-      "id": "gemConversion",
-      "type": "checkbox",
-      "name": "Gem Conversion",
-      "description": "Adds recipes for a single gem plus a stamina potion to convert to a different gem of the same rank.",
-      "defaultValue": true
+        "id": "gemConversion",
+        "type": "select",
+        "name": "Gem Conversion",
+        "description": "Adds recipes to convert gem types.",
+        "defaultValue": "chipped",
+        "options": [
+            { "value": "disabled", "label": "Do not add gem conversion recipes" },
+            { "value": "stamina", "label": "A single gem plus a stamina potion" },
+            { "value": "chipped", "label": "Two gems plus a chipped of the desired type" }
+        ]
     },
     {
         "id": "requireThawingPotionToSplit",

@@ -44,7 +44,7 @@ const RUNE_NAMES = {
     r33: 'Zod',
 };
 
-function FixRuneUpgradeRecipe(tier) {
+function FixRuneUpgradeRecipe(tier, numInputs) {
     const lowerRune = 'r' + tier.toString().padStart(2, '0');
     const upperRune = 'r' + (tier + 1).toString().padStart(2, '0');
     cubemain.rows.forEach((row) => {
@@ -54,18 +54,22 @@ function FixRuneUpgradeRecipe(tier) {
         if (typeof input !== 'undefined' && input.startsWith('"' + lowerRune) && output == upperRune) {
             const lowerName = RUNE_NAMES[lowerRune];
             const upperName = RUNE_NAMES[upperRune];
-            row.description = `2 ${lowerName} Runes -> ${upperName} Rune`;
-            row.numinputs = 2;
-            row['input 1'] = '"' + lowerRune + ',qty=2"';
+            row.description = `${numInputs} ${lowerName} Runes -> ${upperName} Rune`;
+            row.numinputs = numInputs;
+            row['input 1'] = '"' + lowerRune + ',qty='+ numInputs + '"';
             row['input 2'] = '';
             return;
         }
     });
 }
 
-if (config.twoRuneUpgrades) {
+if (config.runeUpgrades == 'two') {
     for (let tier = 1; tier <= 32; tier++)
-        FixRuneUpgradeRecipe(tier);
+        FixRuneUpgradeRecipe(tier, 2);
+}
+else if (config.runeUpgrades == 'noGems') {
+    for (let tier = 1; tier <= 32; tier++)
+        FixRuneUpgradeRecipe(tier, tier >= 21 ? 2 : 3);
 }
 
 if (config.runeSplitting) {
@@ -191,7 +195,7 @@ if (config.gemSplitting) {
     }
 }
 
-if (config.gemConversion) {
+if (config.gemConversion == 'stamina') {
     const gemTypes = Object.keys(GEM_TYPES);
     for (let index = 0; index < gemTypes.length; index++) {
         const inputGemType = gemTypes[index];
@@ -209,6 +213,29 @@ if (config.gemConversion) {
                 'input 2': 'vps',
                 output: outputTiers[tier],
                 'output b': 'vps',
+                '*eol\r': 0,
+            };
+            cubemain.rows.push(recipe);
+        }
+    }
+}
+
+if (config.gemConversion == 'chipped') {
+    const gemTypes = Object.keys(GEM_TYPES);
+    for (let index = 0; index < gemTypes.length; index++) {
+        const outputGemType = gemTypes[index];
+        const outputTiers = GEM_TYPES[outputGemType];
+        for (let tier = 1; tier <= 4; tier++) {
+            const gemLevel = GEM_LEVELS[tier];
+
+            const recipe = {
+                description: `2 ${gemLevel} gems + 1 Chipped ${outputGemType} -> ${gemLevel} ${outputGemType}`,
+                enabled: 1,
+                version: 100,
+                numinputs: 3,
+                'input 1': '"gem' + tier + ',2"',
+                'input 2': outputTiers[0],
+                output: outputTiers[tier],
                 '*eol\r': 0,
             };
             cubemain.rows.push(recipe);

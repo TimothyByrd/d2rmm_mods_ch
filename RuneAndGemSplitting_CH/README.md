@@ -7,7 +7,9 @@ This mod adds recipes for upgrading and splitting runes and gems, also for conve
 Upgrade 2 lower to 1 higher. Split 1 higher to 2 lower.
 Can make the split recipes also require a thawing potion for compatibility with StackableRunes and StackableGems mods.
 
-If __`2-Rune Upgrades`__ is enabled, the existing rune upgrade recipes are updated to require two of the lower rune and no gem.
+If __`Update rune upgrade recipes`__ is set to __`Require two lower runes and no gems`__, the existing rune upgrade recipes are updated to require two of the lower rune and no gem.
+
+If __`Update rune upgrade recipes`__ is set to __`Require no gems`__, the existing rune upgrade recipes are updated to not require gems.
 
 If __`Rune Splitting`__ is enabled, 32 recipees are added each taking a single rune Eld through Zod and returning 2 of the lower rune.
 Recipes taking a single rune may conflict with the StackableRunes mod. If that mod is also being used,
@@ -23,10 +25,14 @@ If __`Gem Splitting`__ is enabled, 28 recipees are added each taking a single ge
 Recipes taking a single gem may conflict with the StackableGems mod. If that mod is also being used,
 then set the  __`Require a thawing potion to split`__ option.
 
-If __`Gem Conversion`__ is enabled, 35 recipees are added.
+If __`Gem Conversion`__ is set to __`A single gem plus a stamina potion`__, 35 recipees are added.
 Each recipe takes a single gem and a stamina potion, and returns a different gem of the same rank.
 For example, "Flawed Amethyst + Stamina Potion" might give a Flawed Diamond
 (and return the Stamina Potion so the recipe can be repeatedly used to cycle through the gem types).
+
+If __`Gem Conversion`__ is set to __`Two gems plus a chipped of the desired type`__, 28 recipees are added.
+Each recipe takes a two gems of the same rank (Flawed, Standard, Flawless or Perfect) and chipped gem of the desired type.
+For example, "2 Flawed gems + 1 Chipped Skull => Flawed Skull".
 
 Note: Thawing potions are to melt things into parts. Antidotes make things better. Stamina poitions are in case you want to keep going. :)
 
@@ -34,3 +40,4 @@ Note: Thawing potions are to melt things into parts. Antidotes make things bette
 
 - 1.0 Initial version
 - 1.1 Add Rune Conversion at the request of vladimir77777777
+- 1.2 Add 'less cheaty' gem conversion of 2x+chipped.
