@@ -3,7 +3,7 @@
   "description": "Allow gambling for class-specific items.",
   "author": "CelticHound",
   "website": "https://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/GambleClassItems_CH",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "config": [
      {
       "id": "amazon",
@@ -13,11 +13,12 @@
       "defaultValue": true
     },
     {
+        "visible": false,
         "id": "assassin",
         "type": "checkbox",
         "name": "Assassin",
         "description": "Assassin katars can be gambled (suppoesedly already true).",
-        "defaultValue": true
+        "defaultValue": false
     },
     {
         "id": "barbarian",
@@ -67,6 +68,148 @@
         "name": "Increase gambling odds",
         "description": "Make rare/set/unique items more common when gambling.",
         "defaultValue": true
+    },
+    {
+        "id": "exclude-weapons-section",
+        "type": "section",
+        "name": "Exclude weapon types from gambling",
+        "defaultExpanded": false,
+        "children": [
+        {
+            "id": "excludeAxes",
+            "type": "checkbox",
+            "name": "Exclude Axes",
+            "description": "Remove Axes from gamble.txt.",
+            "defaultValue": false
+        },
+        {
+            "id": "excludeBows",
+            "type": "checkbox",
+            "name": "Exclude Bows",
+            "description": "Remove Bows from gamble.txt.",
+            "defaultValue": false
+        },
+        {
+            "id": "excludeXBows",
+            "type": "checkbox",
+            "name": "Exclude Crossbows",
+            "description": "Remove Crossbows from gamble.txt.",
+            "defaultValue": false
+        },
+        {
+            "id": "excludeDaggers",
+            "type": "checkbox",
+            "name": "Exclude Daggers",
+            "description": "Remove Daggers from gamble.txt.",
+            "defaultValue": false
+        },
+        {
+            "id": "excludeJavelins",
+            "type": "checkbox",
+            "name": "Exclude Javelins",
+            "description": "Remove Javelins from gamble.txt.",
+            "defaultValue": false
+        },
+        {
+            "id": "excludeMaces",
+            "type": "checkbox",
+            "name": "Exclude Maces",
+            "description": "Remove Maces from gamble.txt.",
+            "defaultValue": false
+        },
+        {
+            "id": "excludePolearms",
+            "type": "checkbox",
+            "name": "Exclude Polearms",
+            "description": "Remove Polearms from gamble.txt.",
+            "defaultValue": false
+        },
+        {
+            "id": "excludeSpears",
+            "type": "checkbox",
+            "name": "Exclude Spears",
+            "description": "Remove Spears from gamble.txt.",
+            "defaultValue": false
+        },
+        {
+            "id": "excludeSwords",
+            "type": "checkbox",
+            "name": "Exclude Swords",
+            "description": "Remove Swords from gamble.txt.",
+            "defaultValue": false
+        },
+        {
+            "id": "excludeThrowing",
+            "type": "checkbox",
+            "name": "Exclude Throwing weapons",
+            "description": "Remove Throwing weapons from gamble.txt.",
+            "defaultValue": false
+        },
+        {
+            "id": "excludeKatars",
+            "type": "checkbox",
+            "name": "Exclude Katars",
+            "description": "Remove Assassin Katars from gamble.txt.",
+            "defaultValue": false
+        }
+    ]
+    },
+    {
+        "id": "exclude-armor-section",
+        "type": "section",
+        "name": "Exclude armor types from gambling",
+        "defaultExpanded": false,
+        "children": [
+        {
+            "id": "excludeHelms",
+            "type": "checkbox",
+            "name": "Exclude Helms",
+            "description": "Remove Helms from gamble.txt.",
+            "defaultValue": false
+        },
+        {
+            "id": "excludeBodyArmor",
+            "type": "checkbox",
+            "name": "Exclude Body Armor",
+            "description": "Remove Body Armor from gamble.txt.",
+            "defaultValue": false
+        },
+        {
+            "id": "excludeShields",
+            "type": "checkbox",
+            "name": "Exclude Shields",
+            "description": "Remove Shields from gamble.txt.",
+            "defaultValue": false
+        },
+        {
+            "id": "excludeGloves",
+            "type": "checkbox",
+            "name": "Exclude Gloves",
+            "description": "Remove Gloves from gamble.txt.",
+            "defaultValue": false
+        },
+        {
+            "id": "excludeBoots",
+            "type": "checkbox",
+            "name": "Exclude Boots",
+            "description": "Remove Boots from gamble.txt.",
+            "defaultValue": false
+        },
+        {
+            "id": "excludeBelts",
+            "type": "checkbox",
+            "name": "Exclude Belts",
+            "description": "Remove Belts from gamble.txt.",
+            "defaultValue": false
+        },
+        {
+            "id": "excludeCirclets",
+            "type": "checkbox",
+            "name": "Exclude Circlets",
+            "description": "Remove Circlets from gamble.txt.",
+            "defaultValue": false
+        }
+      ]
     }
   ]
 }

@@ -2,12 +2,9 @@
 
 ## Gamble Class-specific Items for D2RMM
 
-This mod makes class-specific items available for gambling.
+This mod makes class-specific items available for gambling. (Assassin katars can already be gambled.)
 
 If __`Amazon`__ is enabled, then Amazon-specific bows, spears & javelins can be gambled.
-
-If __`Assassin`__ is enabled, then Assassin katars can be gambled.
-(Though suppoesedly katars are already available for gambling.)
 
 If __`Barbarian`__ is enabled, then Barbarian-specific helmets can be gambled.
 
@@ -23,8 +20,28 @@ If __`Only add normal items`__ is enabled, then only normal items - not exceptio
 This is the way other items are put into gamble.txt, but may need to be disabled if there is a problem
 with the normal -> exceptional -> elite progression for some class-specific item type.
 
-If __`Increase gambling odds`__ is enabled, then the chances of a gamble being rare/set/unique are increased,
+If __`Increase gambling odds`__ is enabled, then the chances of a gamble being rare/set/unique are greatly increased,
 as well as the chances of an exceptional or elite upgrade.
+
+The various "Exclude" options allow individual weapon classes and armor slots to be excluded from gambling:
+- Exclude Axes
+- Exclude Bows
+- Exclude Crossbows
+- Exclude Daggers
+- Exclude Javelins
+- Exclude Maces
+- Exclude Polearms
+- Exclude Spears
+- Exclude Swords
+- Exclude Throwing weapons
+- Exclude Katars
+- Exclude Helms
+- Exclude Body Armor
+- Exclude Shields
+- Exclude Gloves
+- Exclude Boots
+- Exclude Belts
+- Exclude Circlets
 
 ## Versions
 
@@ -32,4 +49,4 @@ as well as the chances of an exceptional or elite upgrade.
 - 1.1 Remove options for charms and jewels since they crash D2R (though they worked in D2:Lod).
 - 1.1.1 Update version so D2RMM can detect it.
 - 1.2 Fix Assassin weapon class to include.
-
+- 1.3 Add options to exclude individual weapon classes and armor slots from gambling.
