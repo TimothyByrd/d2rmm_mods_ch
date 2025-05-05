@@ -1,5 +1,5 @@
 // GambleClassItems_CH
-const itemToAdd = {};
+const itemsToAdd = {};
 const itemsToExclude = {};
 
 const weaponTypes = [];
@@ -44,7 +44,7 @@ if (weaponTypes.length > 0 || weaponTypesToExclude.length > 0) {
     tsv.rows.forEach((row) => {
         if (row.spawnable == 1 && weaponTypes.indexOf(row.type) !== -1
            && (!config.normalOnly || row.code == row.normcode))
-            itemToAdd[row.code] = row.name;
+            itemsToAdd[row.code] = row.name;
         if (row.spawnable == 1 && weaponTypesToExclude.indexOf(row.type) !== -1)
             itemsToExclude[row.code] = row.name;
     });
@@ -85,14 +85,14 @@ if (armorTypes.length > 0 || armorTypesToExclude.length > 0) {
     tsv.rows.forEach((row) => {
         if (row.spawnable == 1 && armorTypes.indexOf(row.type) !== -1
            && (!config.normalOnly || row.code == row.normcode))
-            itemToAdd[row.code] = row.name;
+            itemsToAdd[row.code] = row.name;
         if (row.spawnable == 1 && armorTypesToExclude.indexOf(row.type) !== -1)
             itemsToExclude[row.code] = row.name;
     });
 //    D2RMM.writeTsv(tsvFilename, tsv);
 }
 
-const itemToAddKeys = Object.keys(itemToAdd);
+const itemsToAddKeys = Object.keys(itemsToAdd);
 const itemsToExcludeKeys = Object.keys(itemsToExclude);
 
 // if (itemsToExcludeKeys.length > 0) {
@@ -101,15 +101,15 @@ const itemsToExcludeKeys = Object.keys(itemsToExclude);
 
 const rowsToRemove = [];
 
-if (itemToAddKeys.length > 0 || itemsToExcludeKeys.length > 0) {
+if (itemsToAddKeys.length > 0 || itemsToExcludeKeys.length > 0) {
     const gambleFilename = 'global\\excel\\gamble.txt';
     const gamble = D2RMM.readTsv(gambleFilename);
     gamble.rows.forEach((row) => {
         const rawCode = row['code\r'];
         if (typeof rawCode !== 'undefined') {
             const code = rawCode.trim();
-            if (itemToAddKeys.indexOf(code) !== -1) {
-                delete itemToAdd[code];
+            if (itemsToAddKeys.indexOf(code) !== -1) {
+                delete itemsToAdd[code];
 //                console.log(`Already have ${code}`);
             }
             if (itemsToExcludeKeys.indexOf(code) !== -1) {
@@ -121,7 +121,7 @@ if (itemToAddKeys.length > 0 || itemsToExcludeKeys.length > 0) {
         gamble.rows = gamble.rows.filter((element, index) => !rowsToRemove.includes(element));
     }
 
-    for (const [code, name] of Object.entries(itemToAdd)) {
+    for (const [code, name] of Object.entries(itemsToAdd)) {
         const item = {
             name: name,
             'code\r': `${code}\r`,
