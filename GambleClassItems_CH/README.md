@@ -20,8 +20,11 @@ If __`Only add normal items`__ is enabled, then only normal items - not exceptio
 This is the way other items are put into gamble.txt, but may need to be disabled if there is a problem
 with the normal -> exceptional -> elite progression for some class-specific item type.
 
-If __`Increase gambling odds`__ is enabled, then the chances of a gamble being rare/set/unique are greatly increased,
+If __`Change gambling odds`__ is enabled, then the chances of a gamble being rare/set/unique are greatly increased,
 as well as the chances of an exceptional or elite upgrade.
+
+The __`GambleUnique`__, __`GambleSet`__, __`GambleRare`__, __`GambleUber`__ and __`GambleUltra`__ settings allow fine tuning of the gambling odds.
+See https://classic.battle.net/diablo2exp/basics/gambling.shtml for more info.
 
 The various "Exclude" options allow individual weapon classes and armor slots to be excluded from gambling:
 - Exclude Axes
@@ -50,3 +53,4 @@ The various "Exclude" options allow individual weapon classes and armor slots to
 - 1.1.1 Update version so D2RMM can detect it.
 - 1.2 Fix Assassin weapon class to include.
 - 1.3 Add options to exclude individual weapon classes and armor slots from gambling.
+- 1.4 Add ability to tune gambling odds.

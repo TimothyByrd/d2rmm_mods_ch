@@ -92,6 +92,18 @@ if (armorTypes.length > 0 || armorTypesToExclude.length > 0) {
 //    D2RMM.writeTsv(tsvFilename, tsv);
 }
 
+// Added this because Bullrosh is getting an error:
+// TypeError: Cannot read properties of undefined (reading 'keys')
+//
+Object.keys = Object.keys || function(o) {
+    var keysArray = [];
+    for(var name in o) {
+        if (o.hasOwnProperty(name))
+            keysArray.push(name);
+    }
+    return keysArray;
+};
+
 const itemsToAddKeys = Object.keys(itemsToAdd);
 const itemsToExcludeKeys = Object.keys(itemsToExclude);
 
@@ -135,11 +147,11 @@ if (config.gambleOdds) {
     const tsvFilename = 'global\\excel\\difficultylevels.txt';
     const tsv = D2RMM.readTsv(tsvFilename);
     tsv.rows.forEach((row) => {
-        row.GambleRare = 25000;
-        row.GambleSet = 25000;
-        row.GambleUnique = 25000;
-        row.GambleUber = 128;
-        row.GambleUltra = 128;
+        row.GambleRare = config.gambleRare; // default 10000
+        row.GambleSet = config.gambleSet; // default 100
+        row.GambleUnique = config.gambleUnique; // default 50
+        row.GambleUber = config.gambleUber; // default 90
+        row["GambleUltra\r"] = config.gambleUltra; // default 33
     });
     D2RMM.writeTsv(tsvFilename, tsv);
 }

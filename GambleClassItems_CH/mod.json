@@ -3,7 +3,7 @@
   "description": "Allow gambling for class-specific items.",
   "author": "CelticHound",
   "website": "https://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/GambleClassItems_CH",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "config": [
      {
       "id": "amazon",
@@ -65,9 +65,59 @@
     {
         "id": "gambleOdds",
         "type": "checkbox",
-        "name": "Increase gambling odds",
+        "name": "Change gambling odds",
         "description": "Make rare/set/unique items more common when gambling.",
-        "defaultValue": true
+        "defaultValue": false
+    },
+    {
+        "visible": ["value", "gambleOdds"],
+        "id": "gambleUnique",
+        "type": "number",
+        "name": "GambleUnique",
+        "description": "Unique item probability (unmodded=50=0.05%, example=25,000=25%)",
+        "defaultValue": 25000,
+        "minValue": 1,
+        "maxValue": 99000
+    },
+    {
+        "visible": ["value", "gambleOdds"],
+        "id": "gambleSet",
+        "type": "number",
+        "name": "GambleSet",
+        "description": "Set item probability (unmodded=100=0.1%, example=25,000=25%)",
+        "defaultValue": 25000,
+        "minValue": 2,
+        "maxValue": 99000
+    },
+    {
+        "visible": ["value", "gambleOdds"],
+        "id": "gambleRare",
+        "type": "number",
+        "name": "GambleRare",
+        "description": "Rare item probability (unmodded=10000=10%, example=25,000=25%)",
+        "defaultValue": 25000,
+        "minValue": 2,
+        "maxValue": 99000
+    },
+    {
+        "visible": ["value", "gambleOdds"],
+        "id": "gambleUber",
+        "type": "number",
+        "name": "GambleUber",
+        "description": "Exceptional item probability (unmodded=90) - formula: max{0%, (ilvl - qlvl) * GambleUber/10000 + 1%}",
+        "defaultValue": 128,
+        "minValue": 2,
+        "maxValue": 99000
+    },
+    {
+        "visible": ["value", "gambleOdds"],
+        "id": "gambleUltra",
+        "type": "number",
+        "name": "GambleUltra",
+        "description": "Elite item probability (unmodded=33) - formula: max{0%, (ilvl - qlvl) * GambleUltra/10000 + 1%}",
+        "defaultValue": 128,
+        "minValue": 2,
+        "maxValue": 99000
     },
     {
         "id": "exclude-weapons-section",
