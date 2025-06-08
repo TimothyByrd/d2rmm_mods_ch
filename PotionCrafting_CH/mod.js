@@ -1192,6 +1192,38 @@ if (config.specific) {
     });
 }
 
+
+const GCHARM_UNIQUE = [
+    { input1Label: 'Small', input1: 'cm1', input2Label: 'Amethyst', input2: 'gsv', output: "Annihilus" },
+    { input1Label: 'Large', input1: 'cm2', input2Label: 'Amethyst', input2: 'gsv', output: "Hellfire Torch" },
+    { input1Label: 'Grand', input1: 'cm3', input2Label: 'Amethyst', input2: 'gsv', output: "Gheed's Fortune" },
+    { input1Label: 'Grand', input1: 'cm3', input2Label: 'Diamond', input2: 'gsw', output: 'Bone Break' },
+    { input1Label: 'Grand', input1: 'cm3', input2Label: 'Emerald', input2: 'gsg', output: 'Rotting Fissure' },
+    { input1Label: 'Grand', input1: 'cm3', input2Label: 'Ruby', input2: 'gsr', output: 'Flame Rift' },
+    { input1Label: 'Grand', input1: 'cm3', input2Label: 'Sapphire', input2: 'gsb', output: 'Cold Rupture' },
+    { input1Label: 'Grand', input1: 'cm3', input2Label: 'Topaz', input2: 'gsy', output: 'Crack of the Heavens' },
+    { input1Label: 'Grand', input1: 'cm3', input2Label: 'Skull', input2: 'sku', output: 'Black Cleft' },
+];
+
+if (config.specific || true) {
+    addRecipeEntry('Grand Charm + Standard Gem -> Sunder Charm');
+    for (let index = 0; index < GCHARM_UNIQUE.length; index++) {
+        const entry = GCHARM_UNIQUE[index];
+        const recipe = {
+            description: `${entry.input1Label} Charm + ${entry.input2Label} -> ${entry.output}`,
+            enabled: 1,
+            version: 100,
+            numinputs: 2,
+            'input 1': entry.input1,
+            'input 2': entry.input2,
+            lvl: 75,
+            output: entry.output,
+            '*eol\r': 0,
+        };
+        cubemain.rows.push(recipe);
+    };
+}
+
 D2RMM.writeTsv(cubemainFilename, cubemain);
 
 if (updateRecipesPanel) {

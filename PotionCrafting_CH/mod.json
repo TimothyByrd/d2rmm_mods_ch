@@ -3,7 +3,7 @@
     "description": "Craft items using potions",
     "author": "CelticHound",
     "website": "https://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/PotionCrafting_CH",
-    "version": "1.6.1",
+    "version": "1.6.2",
     "config": [
     {
         "id": "toNormal",

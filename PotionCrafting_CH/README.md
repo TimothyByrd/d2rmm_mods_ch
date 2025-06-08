@@ -400,6 +400,15 @@ If __`Specific charms and jewels`__ is enabled, these recipes are added:
 - Small Charm + Emerald + Health Potion -> Pestilent Charm of Vita
 - Small Charm + Emerald + Stamina Potion -> Pestilent Charm of Inertia
 - Small Charm + Emerald + Antidote Potion -> Pestilent Charm of Anthrax
+- Small Charm + Amethyst -> Annihilus
+- Large Charm + Amethyst -> Hellfire Torch
+- Grand Charm + Amethyst -> Gheed's Fortune
+- Grand Charm + Diamond -> Bone Break
+- Grand Charm + Emerald -> Rotting Fissure
+- Grand Charm + Ruby -> Flame Rift
+- Grand Charm + Sapphire -> Cold Rupture
+- Grand Charm + Topaz -> Crack of the Heavens
+- Grand Charm + Skull -> Black Cleft
 
 The __`Update recipes panel`__ setting is for when the "Breakpoint and Recipe UI Panels" mod is installed.
 It updates the recipe panel to include the new recipes added by this mod.
@@ -444,3 +453,4 @@ To craft a giant thresher for infinity for your mercenary use these steps:
 - 1.5.0 Add recipes for specific charms/jewels
 - 1.6.0 Add potion splitting recipes and add crafting examples to the README
 - 1.6.1 Fix typo in Amulet->Jewel recipe
+- 1.6.2 Add recipes to create unique charms
