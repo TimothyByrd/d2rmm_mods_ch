@@ -13,6 +13,8 @@ if (config.paladin)
     weaponTypes.push('scep');
 if (config.sorceress)
     weaponTypes.push('staf', 'orb');
+if (config.warlock)
+    weaponTypes.push('knif');
 
 const weaponTypesToExclude = [];
 if (config.excludeAxes)
@@ -60,6 +62,8 @@ if (config.necromancer)
     armorTypes.push('head');
 if (config.paladin)
     armorTypes.push('ashd');
+if (config.warlock)
+    armorTypes.push('grim');
 
 const armorTypesToExclude = [];
 if (config.excludeHelms)

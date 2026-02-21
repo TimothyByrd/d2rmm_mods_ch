@@ -56,6 +56,13 @@
         "defaultValue": true
     },
     {
+      "id": "warlock",
+      "type": "checkbox",
+      "name": "Warlock",
+      "description": "Warlock-specific tomes and daggers can be gambled.",
+      "defaultValue": true
+    },
+    {
         "id": "normalOnly",
         "type": "checkbox",
         "name": "Only add normal items",
