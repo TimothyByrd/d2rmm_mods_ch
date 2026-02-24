@@ -3,7 +3,7 @@
   "description": "Allow gambling for class-specific items.",
   "author": "CelticHound",
   "website": "https://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/GambleClassItems_CH",
-  "version": "1.4.0",
+  "version": "1.6.0",
   "config": [
      {
       "id": "amazon",
@@ -17,7 +17,7 @@
         "id": "assassin",
         "type": "checkbox",
         "name": "Assassin",
-        "description": "Assassin katars can be gambled (suppoesedly already true).",
+        "description": "Assassin katars can be gambled (supposedly already true).",
         "defaultValue": false
     },
     {
@@ -59,7 +59,7 @@
       "id": "warlock",
       "type": "checkbox",
       "name": "Warlock",
-      "description": "Warlock-specific tomes and daggers can be gambled.",
+      "description": "Warlock grimoires can be gambled.",
       "defaultValue": true
     },
     {
