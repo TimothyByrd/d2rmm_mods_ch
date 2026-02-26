@@ -125,7 +125,6 @@ function processGambleTxt(folder) {
     if (itemsToAddKeys.length > 0 || itemsToExcludeKeys.length > 0) {
         const gambleFilename = folder + '\\gamble.txt';
         const gamble = D2RMM.readTsv(gambleFilename);
-    D2RMM.writeTsv(folder + '\\gamble_orig.txt', gamble);
 
         if (gamble.rows.length == 0) return;
         gamble.rows.forEach((row) => {
