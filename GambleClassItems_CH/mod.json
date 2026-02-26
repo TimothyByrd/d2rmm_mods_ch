@@ -3,7 +3,7 @@
   "description": "Allow gambling for class-specific items.",
   "author": "CelticHound",
   "website": "https://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/GambleClassItems_CH",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "config": [
      {
       "id": "amazon",
@@ -59,7 +59,7 @@
       "id": "warlock",
       "type": "checkbox",
       "name": "Warlock",
-      "description": "Warlock grimoires can be gambled.",
+      "description": "Warlock grimoires and daggers can be gambled.",
       "defaultValue": true
     },
     {

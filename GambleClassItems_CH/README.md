@@ -16,7 +16,7 @@ If __`Paladin`__ is enabled, then Paladin scepters and shields can be gambled.
 
 If __`Sorceress`__ is enabled, then Sorceress staves and orbs can be gambled.
 
-If __`Warlock`__ is enabled, then Warlock grimoires can be gambled. If you do not have the Warlock DLC, this option has no effect.
+If __`Warlock`__ is enabled, then Warlock grimoires and daggers can be gambled. If you do not have the Warlock DLC, this option has no effect (and daggers can normally be gambled).
 
 If __`Only add normal items`__ is enabled, then only normal items - not exceptional and elite item type - will be added to gamble.txt.
 This is the way other items are put into gamble.txt, but may need to be disabled if there is a problem
@@ -58,3 +58,4 @@ The various "Exclude" options allow individual weapon classes and armor slots to
 - 1.4 Add ability to tune gambling odds.
 - 1.5 Add code by lendarker to enable gambling Warlock items
 - 1.6 Remove adding daggers when Warlock is selected, as they are not class specific.
+- 1.7 Allow for people who do not have the Warlock DLC. Add daggers back in.

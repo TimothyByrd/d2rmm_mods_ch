@@ -1,4 +1,5 @@
 // GambleClassItems_CH
+
 const itemsToAdd = {};
 const itemsToExclude = {};
 
@@ -13,6 +14,8 @@ if (config.paladin)
     weaponTypes.push('scep');
 if (config.sorceress)
     weaponTypes.push('staf', 'orb');
+if (config.warlock)
+    weaponTypes.push('knif'); // These used to be able to be gambled before the Warlock DLC
 
 const weaponTypesToExclude = [];
 if (config.excludeAxes)
@@ -37,19 +40,6 @@ if (config.excludeThrowing)
     weaponTypesToExclude.push('taxe', 'tkni');
 if (config.excludeKatars)
     weaponTypesToExclude.push('h2h', 'h2h2');
-
-if (weaponTypes.length > 0 || weaponTypesToExclude.length > 0) {
-    const tsvFilename = 'global\\excel\\weapons.txt';
-    const tsv = D2RMM.readTsv(tsvFilename);
-    tsv.rows.forEach((row) => {
-        if (row.spawnable == 1 && weaponTypes.indexOf(row.type) !== -1
-           && (!config.normalOnly || row.code == row.normcode))
-            itemsToAdd[row.code] = row.name;
-        if (row.spawnable == 1 && weaponTypesToExclude.indexOf(row.type) !== -1)
-            itemsToExclude[row.code] = row.name;
-    });
-    //D2RMM.writeTsv(tsvFilename, tsv);
-}
 
 const armorTypes = [];
 if (config.barbarian)
@@ -81,79 +71,104 @@ if (config.excludeCirclets)
 
 //console.log(`Excluding armor types: ${armorTypesToExclude}`);
 
-if (armorTypes.length > 0 || armorTypesToExclude.length > 0) {
-    const tsvFilename = 'global\\excel\\armor.txt';
-    const tsv = D2RMM.readTsv(tsvFilename);
-    tsv.rows.forEach((row) => {
-        if (row.spawnable == 1 && armorTypes.indexOf(row.type) !== -1
-           && (!config.normalOnly || row.code == row.normcode))
-            itemsToAdd[row.code] = row.name;
-        if (row.spawnable == 1 && armorTypesToExclude.indexOf(row.type) !== -1)
-            itemsToExclude[row.code] = row.name;
-    });
-//    D2RMM.writeTsv(tsvFilename, tsv);
-}
+function processGambleTxt(folder) {
 
-// Added this because Bullrosh is getting an error:
-// TypeError: Cannot read properties of undefined (reading 'keys')
-//
-Object.keys = Object.keys || function(o) {
-    var keysArray = [];
-    for(var name in o) {
-        if (o.hasOwnProperty(name))
-            keysArray.push(name);
+    if (weaponTypes.length > 0 || weaponTypesToExclude.length > 0) {
+        const tsvFilename = folder + '\\weapons.txt';
+        const tsv = D2RMM.readTsv(tsvFilename);
+        if (tsv.rows.length == 0) return;
+        tsv.rows.forEach((row) => {
+            if (row.spawnable == 1 && weaponTypes.indexOf(row.type) !== -1
+               && (!config.normalOnly || row.code == row.normcode))
+                itemsToAdd[row.code] = row.name;
+            if (row.spawnable == 1 && weaponTypesToExclude.indexOf(row.type) !== -1)
+                itemsToExclude[row.code] = row.name;
+        });
+        // D2RMM.writeTsv(tsvFilename, tsv);
     }
-    return keysArray;
-};
 
-const itemsToAddKeys = Object.keys(itemsToAdd);
-const itemsToExcludeKeys = Object.keys(itemsToExclude);
+    if (armorTypes.length > 0 || armorTypesToExclude.length > 0) {
+        const tsvFilename = folder + '\\armor.txt';
+        const tsv = D2RMM.readTsv(tsvFilename);
+        if (tsv.rows.length == 0) return;
+        tsv.rows.forEach((row) => {
+            if (row.spawnable == 1 && armorTypes.indexOf(row.type) !== -1
+               && (!config.normalOnly || row.code == row.normcode))
+                itemsToAdd[row.code] = row.name;
+            if (row.spawnable == 1 && armorTypesToExclude.indexOf(row.type) !== -1)
+                itemsToExclude[row.code] = row.name;
+        });
+        // D2RMM.writeTsv(tsvFilename, tsv);
+    }
 
-// if (itemsToExcludeKeys.length > 0) {
-//     console.log(`Excluding ${itemsToExcludeKeys}`);
-// }
-
-const rowsToRemove = [];
-
-if (itemsToAddKeys.length > 0 || itemsToExcludeKeys.length > 0) {
-    const gambleFilename = 'global\\excel\\gamble.txt';
-    const gamble = D2RMM.readTsv(gambleFilename);
-    gamble.rows.forEach((row) => {
-        const rawCode = row['code\r'];
-        if (typeof rawCode !== 'undefined') {
-            const code = rawCode.trim();
-            if (itemsToAddKeys.indexOf(code) !== -1) {
-                delete itemsToAdd[code];
-//                console.log(`Already have ${code}`);
-            }
-            if (itemsToExcludeKeys.indexOf(code) !== -1) {
-                rowsToRemove.push(row);
-            }
+    // Added this because Bullrosh is getting an error:
+    // TypeError: Cannot read properties of undefined (reading 'keys')
+    //
+    Object.keys = Object.keys || function(o) {
+        var keysArray = [];
+        for(var name in o) {
+            if (o.hasOwnProperty(name))
+                keysArray.push(name);
         }
-    });
-    if (rowsToRemove.length > 0) {
-        gamble.rows = gamble.rows.filter((element, index) => !rowsToRemove.includes(element));
+        return keysArray;
+    };
+
+    const itemsToAddKeys = Object.keys(itemsToAdd);
+    const itemsToExcludeKeys = Object.keys(itemsToExclude);
+
+    // if (itemsToExcludeKeys.length > 0) {
+    //     console.log(`Excluding ${itemsToExcludeKeys}`);
+    // }
+
+    const rowsToRemove = [];
+
+    if (itemsToAddKeys.length > 0 || itemsToExcludeKeys.length > 0) {
+        const gambleFilename = folder + '\\gamble.txt';
+        const gamble = D2RMM.readTsv(gambleFilename);
+    D2RMM.writeTsv(folder + '\\gamble_orig.txt', gamble);
+
+        if (gamble.rows.length == 0) return;
+        gamble.rows.forEach((row) => {
+            const rawCode = row['code\r'];
+            if (typeof rawCode !== 'undefined') {
+                const code = rawCode.trim();
+                if (itemsToAddKeys.indexOf(code) !== -1) {
+                    delete itemsToAdd[code];
+    //                console.log(`Already have ${code}`);
+                }
+                if (itemsToExcludeKeys.indexOf(code) !== -1) {
+                    rowsToRemove.push(row);
+                }
+            }
+        });
+        if (rowsToRemove.length > 0) {
+            gamble.rows = gamble.rows.filter((element, index) => !rowsToRemove.includes(element));
+        }
+
+        for (const [code, name] of Object.entries(itemsToAdd)) {
+            const item = {
+                name: name,
+                'code\r': `${code}\r`,
+            };
+            gamble.rows.push(item);
+        }
+        D2RMM.writeTsv(gambleFilename, gamble);
     }
 
-    for (const [code, name] of Object.entries(itemsToAdd)) {
-        const item = {
-            name: name,
-            'code\r': `${code}\r`,
-        };
-        gamble.rows.push(item);
+    if (true || config.gambleOdds) {
+        const tsvFilename = folder + '\\difficultylevels.txt';
+        const tsv = D2RMM.readTsv(tsvFilename);
+        tsv.rows.forEach((row) => {
+            row.GambleRare = config.gambleRare; // default 10000
+            row.GambleSet = config.gambleSet; // default 100
+            row.GambleUnique = config.gambleUnique; // default 50
+            row.GambleUber = config.gambleUber; // default 90
+            row["GambleUltra"] = config.gambleUltra; // default 33
+        });
+        D2RMM.writeTsv(tsvFilename, tsv);
     }
-    D2RMM.writeTsv(gambleFilename, gamble);
-}
 
-if (config.gambleOdds) {
-    const tsvFilename = 'global\\excel\\difficultylevels.txt';
-    const tsv = D2RMM.readTsv(tsvFilename);
-    tsv.rows.forEach((row) => {
-        row.GambleRare = config.gambleRare; // default 10000
-        row.GambleSet = config.gambleSet; // default 100
-        row.GambleUnique = config.gambleUnique; // default 50
-        row.GambleUber = config.gambleUber; // default 90
-        row["GambleUltra\r"] = config.gambleUltra; // default 33
-    });
-    D2RMM.writeTsv(tsvFilename, tsv);
-}
+} // function processGambleTxt
+
+processGambleTxt('global\\excel');
+processGambleTxt('global\\excel\\base');
