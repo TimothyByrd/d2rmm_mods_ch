@@ -97,6 +97,7 @@ function processFolder(folder) {
 
     const cubemainFilename = folder + '\\cubemain.txt';
     const cubemain = D2RMM.readTsv(cubemainFilename);
+    if (cubemain.rows.length == 0) return;
 
     const header = {
         description: 'RuneAndGemSplitting_CH',
