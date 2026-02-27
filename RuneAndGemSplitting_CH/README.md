@@ -41,3 +41,4 @@ Note: Thawing potions are to melt things into parts. Antidotes make things bette
 - 1.0 Initial version
 - 1.1 Add Rune Conversion at the request of vladimir77777777
 - 1.2 Add 'less cheaty' gem conversion of 2x+chipped.
+- 1.3 Update to support Reign of the Warlock patch

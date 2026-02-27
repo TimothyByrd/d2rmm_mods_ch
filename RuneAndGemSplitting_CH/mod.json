@@ -3,7 +3,7 @@
   "description": "Simplifies rune and gem upgrade recipes. Add recipes to split runes and gems.",
   "author": "CelticHound",
   "website": "https://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/RuneAndGemSplitting_CH",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "config": [
     {
       "id": "runeUpgrades",
