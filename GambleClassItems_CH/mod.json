@@ -3,7 +3,7 @@
   "description": "Allow gambling for class-specific items.",
   "author": "CelticHound",
   "website": "https://github.com/TimothyByrd/d2rmm_mods_ch/tree/main/GambleClassItems_CH",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "config": [
      {
       "id": "amazon",
@@ -264,6 +264,28 @@
             "type": "checkbox",
             "name": "Exclude Circlets",
             "description": "Remove Circlets from gamble.txt.",
+            "defaultValue": false
+        }
+      ]
+    },
+    {
+        "id": "drops-section",
+        "type": "section",
+        "name": "Non-gambling item drops",
+        "defaultExpanded": false,
+        "children": [
+        {
+            "id": "fixCowKingDrops",
+            "type": "checkbox",
+            "name": "Fix Cow King set drops",
+            "description": "Fix bug that prevents Cow King himself from dropping items of the Cow King set.",
+            "defaultValue": false
+        },
+        {
+            "id": "fixCountessRuneDrops",
+            "type": "checkbox",
+            "name": "Fix Countess rune drops",
+            "description": "Fix Countess-related treasure classes to make her prefer dropping runes over items (except sunder charms).",
             "defaultValue": false
         }
       ]

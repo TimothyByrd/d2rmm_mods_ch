@@ -28,6 +28,10 @@ as well as the chances of an exceptional or elite upgrade.
 The __`GambleUnique`__, __`GambleSet`__, __`GambleRare`__, __`GambleUber`__ and __`GambleUltra`__ settings allow fine tuning of the gambling odds.
 See https://classic.battle.net/diablo2exp/basics/gambling.shtml for more info.
 
+If __`Fix Cow King set drops`__ is enabled, then a bug is fixed that prevents Cow King himself from dropping items of the Cow King set.
+
+If __`Fix Countess rune drops`__ is enabled, then the Countess-related treasure classes are fixed to make her prefer dropping runes over items (except sunder charms).
+
 The various "Exclude" options allow individual weapon classes and armor slots to be excluded from gambling:
 - Exclude Axes
 - Exclude Bows
@@ -59,3 +63,5 @@ The various "Exclude" options allow individual weapon classes and armor slots to
 - 1.5 Add code by lendarker to enable gambling Warlock items
 - 1.6 Remove adding daggers when Warlock is selected, as they are not class specific.
 - 1.7 Allow for people who do not have the Warlock DLC. Add daggers back in.
+- 1.8 Add settings to fix Cow King set drop and Countess Rune drops
+ 

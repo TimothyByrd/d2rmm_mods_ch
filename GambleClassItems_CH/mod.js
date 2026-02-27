@@ -154,7 +154,7 @@ function processGambleTxt(folder) {
         D2RMM.writeTsv(gambleFilename, gamble);
     }
 
-    if (true || config.gambleOdds) {
+    if (config.gambleOdds) {
         const tsvFilename = folder + '\\difficultylevels.txt';
         const tsv = D2RMM.readTsv(tsvFilename);
         tsv.rows.forEach((row) => {
@@ -162,11 +162,47 @@ function processGambleTxt(folder) {
             row.GambleSet = config.gambleSet; // default 100
             row.GambleUnique = config.gambleUnique; // default 50
             row.GambleUber = config.gambleUber; // default 90
-            row["GambleUltra"] = config.gambleUltra; // default 33
+            row.GambleUltra = config.gambleUltra; // default 33
         });
         D2RMM.writeTsv(tsvFilename, tsv);
     }
 
+    if (config.fixCowKingDrops) {
+        const tsvFilename = folder + '\\superuniques.txt';
+        const tsv = D2RMM.readTsv(tsvFilename);
+        tsv.rows.forEach((row) => {
+            if (row.Name == 'The Cow King')
+                row.Class = 'hellbovine';
+        });
+        D2RMM.writeTsv(tsvFilename, tsv);
+    }
+
+    if (config.fixCountessRuneDrops) {
+        const tsvFilename = folder + '\\treasureclassex.txt';
+        const tsv = D2RMM.readTsv(tsvFilename);
+        tsv.rows.forEach((row) => {
+            const treasureClass = row['Treasure Class'];
+            if (treasureClass === 'Countess' ||
+                treasureClass.startsWith('Countess (') ||
+                treasureClass.startsWith('Countess Desecrated')) {
+
+                // swap the order of 'Countess Rune' and 'Countess Item' to make
+                // the countess prefer to drop runes over items
+                const item1 = row.Item1;
+                const item2 = row.Item2;
+                const item3 = row.Item3;
+                if (item3.startsWith('Countess Rune')) {
+                    row.Item2 = item3;
+                    row.Item3 = item2;
+                }
+                else if (item2.startsWith('Countess Rune')) {
+                    row.Item1 = item2;
+                    row.Item2 = item1;
+                }
+            }
+        });
+        D2RMM.writeTsv(tsvFilename, tsv);
+    }
 } // function processGambleTxt
 
 processGambleTxt('global\\excel');
