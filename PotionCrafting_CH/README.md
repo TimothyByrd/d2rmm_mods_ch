@@ -454,3 +454,4 @@ To craft a giant thresher for infinity for your mercenary use these steps:
 - 1.6.0 Add potion splitting recipes and add crafting examples to the README
 - 1.6.1 Fix typo in Amulet->Jewel recipe
 - 1.6.2 Add recipes to create unique charms
+- 1.7.0 Update to support Reign of the Warlock patch
